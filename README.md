@@ -4,7 +4,7 @@ IBM Applied Data Science Capstone by Nicholas Yap.
 
 ## Presentation and analysis
 
-- [Submission PDF](ds-capstone-review-ready.pdf)
+- [Submission PDF](ds-capstone-final.pdf)
 - [Completed presentation](ds-capstone-completed.pptx)
 - [API snapshot and data validation](notebooks/01-data-collection.ipynb)
 - [Web scraping](notebooks/jupyter-labs-webscraping.ipynb)
@@ -12,7 +12,10 @@ IBM Applied Data Science Capstone by Nicholas Yap.
 - [SQL analysis](notebooks/jupyter-labs-eda-sql-coursera_sqllite.ipynb)
 - [Folium maps](notebooks/03-interactive-maps.ipynb)
 - [Classification](notebooks/SpaceX-Machine-Learning-Prediction-Part-5-v1.ipynb)
+- [Additional insights](notebooks/04-additional-insights.ipynb)
 - [Dash dashboard](spacex_dashboard.py)
+
+The final PDF has 40 pages. Page 2 maps the fifteen supplied criterion categories to substantive evidence. Pages 4–6 show predictive evaluation, the confusion matrix and model selection. Page 7 concludes the study, and page 8 presents additional insights.
 
 ## Main results
 
@@ -48,7 +51,7 @@ python build_maps.py
 python -m http.server 8052
 ```
 
-Open the HTML files under `http://127.0.0.1:8052/maps/`. GitHub shows HTML source, so download or serve the repository to interact with maps. Run notebooks from the repository root or `notebooks/`. The bootstrap cell resolves the data directory. Original saved analytical outputs are retained; the three new companion notebooks include executed outputs. The original course notebooks may attempt to refresh data online before falling back to cached files.
+Open the HTML files under `http://127.0.0.1:8052/maps/`. GitHub shows HTML source, so download or serve the repository to interact with maps. Run notebooks from the repository root or `notebooks/`. The bootstrap cell resolves the data directory. Original saved analytical outputs are retained; the four new companion notebooks include executed outputs. The original course notebooks may attempt to refresh data online before falling back to cached files.
 
 ## Sources
 
