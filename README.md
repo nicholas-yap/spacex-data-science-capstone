@@ -4,6 +4,7 @@ IBM Applied Data Science Capstone by Nicholas Yap.
 
 ## Presentation and analysis
 
+- [Submission PDF](ds-capstone-review-ready.pdf)
 - [Completed presentation](ds-capstone-completed.pptx)
 - [API snapshot and data validation](notebooks/01-data-collection.ipynb)
 - [Web scraping](notebooks/jupyter-labs-webscraping.ipynb)
@@ -60,3 +61,4 @@ Wikipedia snapshot: https://en.wikipedia.org/w/index.php?title=List_of_Falcon_9_
 Map attribution: https://www.openstreetmap.org/copyright
 
 Presentation artwork and course notebook instructions retain their original IBM/Coursera attribution. Dataset and course content rights remain with their respective owners.
+
