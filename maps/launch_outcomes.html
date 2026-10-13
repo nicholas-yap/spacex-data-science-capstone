@@ -1,0 +1,4474 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_973f63c593de22311d798d665dbb8418 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/ardhi/Leaflet.MousePosition/src/L.Control.MousePosition.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ardhi/Leaflet.MousePosition/src/L.Control.MousePosition.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    <div style="position:fixed;top:12px;left:65px;z-index:9999;background:white;padding:14px 20px;font:18px Arial;box-shadow:0 1px 5px #aaa"><b>Launch outcomes by site</b><br><span style="font-size:14px">Green: Class 1 | Red: Class 0 | Click a cluster to separate overlapping launches</span></div>
+    
+            <div class="folium-map" id="map_973f63c593de22311d798d665dbb8418" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_973f63c593de22311d798d665dbb8418 = L.map(
+                "map_973f63c593de22311d798d665dbb8418",
+                {
+                    center: [28.59, -80.62],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_973f63c593de22311d798d665dbb8418);
+
+            
+
+        
+    
+            var tile_layer_748e334698570e0d5ac227d1a15816a1 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_748e334698570e0d5ac227d1a15816a1.addTo(map_973f63c593de22311d798d665dbb8418);
+        
+    
+            var mouse_position_7d10afa67eeea4838a110b1d57c492e0 = new L.Control.MousePosition(
+                {
+  "position": "bottomright",
+  "separator": " : ",
+  "emptyString": "Unavailable",
+  "lngFirst": false,
+  "numDigits": 5,
+  "prefix": "",
+}
+            );
+            mouse_position_7d10afa67eeea4838a110b1d57c492e0.options["latFormatter"] =
+                undefined;
+            mouse_position_7d10afa67eeea4838a110b1d57c492e0.options["lngFormatter"] =
+                undefined;
+            map_973f63c593de22311d798d665dbb8418.addControl(mouse_position_7d10afa67eeea4838a110b1d57c492e0);
+        
+    
+            var marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_933f8f1c40e8a78dd39415b9207b4cfd = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_287543c167aa377d0ff4df72e7d934b5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6b19abc1235cbf22693b54973267bcac = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_08e88e859bccc35e1194f3907d233563 = $(`<div id="html_08e88e859bccc35e1194f3907d233563" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>None None<br>Payload: 6,105 kg</div>`)[0];
+                popup_6b19abc1235cbf22693b54973267bcac.setContent(html_08e88e859bccc35e1194f3907d233563);
+            
+        
+
+        marker_933f8f1c40e8a78dd39415b9207b4cfd.bindPopup(popup_6b19abc1235cbf22693b54973267bcac)
+        ;
+
+        
+    
+    
+            marker_933f8f1c40e8a78dd39415b9207b4cfd.bindTooltip(
+                `<div>
+                     Flight 1: 2010-06-04, Class 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_933f8f1c40e8a78dd39415b9207b4cfd.setIcon(icon_287543c167aa377d0ff4df72e7d934b5);
+            
+    
+            var marker_74fb36d4b851e1cd0d0482de99236fad = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_83e5b84c6020702b2384a1fc8ceb9860 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_238761bbb536ea8a358d97cef1767dec = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d0c1667bd9bdbf2da5e4ddd53b1a8c55 = $(`<div id="html_d0c1667bd9bdbf2da5e4ddd53b1a8c55" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>None None<br>Payload: 525 kg</div>`)[0];
+                popup_238761bbb536ea8a358d97cef1767dec.setContent(html_d0c1667bd9bdbf2da5e4ddd53b1a8c55);
+            
+        
+
+        marker_74fb36d4b851e1cd0d0482de99236fad.bindPopup(popup_238761bbb536ea8a358d97cef1767dec)
+        ;
+
+        
+    
+    
+            marker_74fb36d4b851e1cd0d0482de99236fad.bindTooltip(
+                `<div>
+                     Flight 2: 2012-05-22, Class 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_74fb36d4b851e1cd0d0482de99236fad.setIcon(icon_83e5b84c6020702b2384a1fc8ceb9860);
+            
+    
+            var marker_5ec9d3359e8d9633edc6bd59b4cf2c34 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_aaac483a8f3519c45b13591fde99b6ad = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_037a29dcc477cb55f2102ba370a9fc37 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_91cf3d295652b727de8ef1108b9167d4 = $(`<div id="html_91cf3d295652b727de8ef1108b9167d4" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>None None<br>Payload: 677 kg</div>`)[0];
+                popup_037a29dcc477cb55f2102ba370a9fc37.setContent(html_91cf3d295652b727de8ef1108b9167d4);
+            
+        
+
+        marker_5ec9d3359e8d9633edc6bd59b4cf2c34.bindPopup(popup_037a29dcc477cb55f2102ba370a9fc37)
+        ;
+
+        
+    
+    
+            marker_5ec9d3359e8d9633edc6bd59b4cf2c34.bindTooltip(
+                `<div>
+                     Flight 3: 2013-03-01, Class 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5ec9d3359e8d9633edc6bd59b4cf2c34.setIcon(icon_aaac483a8f3519c45b13591fde99b6ad);
+            
+    
+            var marker_604c7dc03333f23e0c2d82b2c706131d = L.marker(
+                [34.632093, -120.610829],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_6ffb9e811f5ed0140be89b9b4203ef45 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_290ffd431ae874534f6e47cc1ddb4a4b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_62a4dc5b920523a7d4772696ad4bb616 = $(`<div id="html_62a4dc5b920523a7d4772696ad4bb616" style="width: 100.0%; height: 100.0%;">VAFB SLC 4E<br>False Ocean<br>Payload: 500 kg</div>`)[0];
+                popup_290ffd431ae874534f6e47cc1ddb4a4b.setContent(html_62a4dc5b920523a7d4772696ad4bb616);
+            
+        
+
+        marker_604c7dc03333f23e0c2d82b2c706131d.bindPopup(popup_290ffd431ae874534f6e47cc1ddb4a4b)
+        ;
+
+        
+    
+    
+            marker_604c7dc03333f23e0c2d82b2c706131d.bindTooltip(
+                `<div>
+                     Flight 4: 2013-09-29, Class 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_604c7dc03333f23e0c2d82b2c706131d.setIcon(icon_6ffb9e811f5ed0140be89b9b4203ef45);
+            
+    
+            var marker_0e62615337ce854f3e60b8ee7f0008b7 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_be5c97251bdef31fab6e25ad24f2f38c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0a7828d51281c77bc530abba24036462 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_52d3387ea9e66a552d741fd2943d4bc3 = $(`<div id="html_52d3387ea9e66a552d741fd2943d4bc3" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>None None<br>Payload: 3,170 kg</div>`)[0];
+                popup_0a7828d51281c77bc530abba24036462.setContent(html_52d3387ea9e66a552d741fd2943d4bc3);
+            
+        
+
+        marker_0e62615337ce854f3e60b8ee7f0008b7.bindPopup(popup_0a7828d51281c77bc530abba24036462)
+        ;
+
+        
+    
+    
+            marker_0e62615337ce854f3e60b8ee7f0008b7.bindTooltip(
+                `<div>
+                     Flight 5: 2013-12-03, Class 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0e62615337ce854f3e60b8ee7f0008b7.setIcon(icon_be5c97251bdef31fab6e25ad24f2f38c);
+            
+    
+            var marker_cabe4599754f509e341bc417ac42897c = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_826c185d2385d8e50c0edecfb897ba04 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c7d356aa20ea0f50715491ac2cc95920 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_11fca44451609288dc40a3820ef4218a = $(`<div id="html_11fca44451609288dc40a3820ef4218a" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>None None<br>Payload: 3,325 kg</div>`)[0];
+                popup_c7d356aa20ea0f50715491ac2cc95920.setContent(html_11fca44451609288dc40a3820ef4218a);
+            
+        
+
+        marker_cabe4599754f509e341bc417ac42897c.bindPopup(popup_c7d356aa20ea0f50715491ac2cc95920)
+        ;
+
+        
+    
+    
+            marker_cabe4599754f509e341bc417ac42897c.bindTooltip(
+                `<div>
+                     Flight 6: 2014-01-06, Class 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cabe4599754f509e341bc417ac42897c.setIcon(icon_826c185d2385d8e50c0edecfb897ba04);
+            
+    
+            var marker_193f3d655b7ea6e43a14f57f259f92c1 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_71f2802cd641ac8f835487633e60df8d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ae4a9581745323ff3de2c71295d7fa67 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ed3f9b2a0e8db1f6d697578a40bab746 = $(`<div id="html_ed3f9b2a0e8db1f6d697578a40bab746" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True Ocean<br>Payload: 2,296 kg</div>`)[0];
+                popup_ae4a9581745323ff3de2c71295d7fa67.setContent(html_ed3f9b2a0e8db1f6d697578a40bab746);
+            
+        
+
+        marker_193f3d655b7ea6e43a14f57f259f92c1.bindPopup(popup_ae4a9581745323ff3de2c71295d7fa67)
+        ;
+
+        
+    
+    
+            marker_193f3d655b7ea6e43a14f57f259f92c1.bindTooltip(
+                `<div>
+                     Flight 7: 2014-04-18, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_193f3d655b7ea6e43a14f57f259f92c1.setIcon(icon_71f2802cd641ac8f835487633e60df8d);
+            
+    
+            var marker_5b801b1ac9a6cc73085ca70cb9ddf9eb = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_dcb8c650b689011d6494fed9a21fe616 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_193c2d8c60d8312b20286c2a6ebe95ea = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9c4494cbcf3730ddec8d7a01ae71f135 = $(`<div id="html_9c4494cbcf3730ddec8d7a01ae71f135" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True Ocean<br>Payload: 1,316 kg</div>`)[0];
+                popup_193c2d8c60d8312b20286c2a6ebe95ea.setContent(html_9c4494cbcf3730ddec8d7a01ae71f135);
+            
+        
+
+        marker_5b801b1ac9a6cc73085ca70cb9ddf9eb.bindPopup(popup_193c2d8c60d8312b20286c2a6ebe95ea)
+        ;
+
+        
+    
+    
+            marker_5b801b1ac9a6cc73085ca70cb9ddf9eb.bindTooltip(
+                `<div>
+                     Flight 8: 2014-07-14, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5b801b1ac9a6cc73085ca70cb9ddf9eb.setIcon(icon_dcb8c650b689011d6494fed9a21fe616);
+            
+    
+            var marker_1bdd8732636a85d0e13ed1a3d76f5ec8 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_41a2da60cdd37ac799a638054026a782 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0ee934d3c351b45b18fc8b3a3e879655 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a4bfd00dba75ff411968c68f1d8d65e1 = $(`<div id="html_a4bfd00dba75ff411968c68f1d8d65e1" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>None None<br>Payload: 4,535 kg</div>`)[0];
+                popup_0ee934d3c351b45b18fc8b3a3e879655.setContent(html_a4bfd00dba75ff411968c68f1d8d65e1);
+            
+        
+
+        marker_1bdd8732636a85d0e13ed1a3d76f5ec8.bindPopup(popup_0ee934d3c351b45b18fc8b3a3e879655)
+        ;
+
+        
+    
+    
+            marker_1bdd8732636a85d0e13ed1a3d76f5ec8.bindTooltip(
+                `<div>
+                     Flight 9: 2014-08-05, Class 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1bdd8732636a85d0e13ed1a3d76f5ec8.setIcon(icon_41a2da60cdd37ac799a638054026a782);
+            
+    
+            var marker_7ae7cbe478d1ea7bb1f3184f0a906c20 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_22d03fcca423e4162a0c4746b1a5b633 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_86e52d17e7430e91e96465d041bbaaa1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_92dd69388213f8c15fcfb8969987d22f = $(`<div id="html_92dd69388213f8c15fcfb8969987d22f" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>None None<br>Payload: 4,428 kg</div>`)[0];
+                popup_86e52d17e7430e91e96465d041bbaaa1.setContent(html_92dd69388213f8c15fcfb8969987d22f);
+            
+        
+
+        marker_7ae7cbe478d1ea7bb1f3184f0a906c20.bindPopup(popup_86e52d17e7430e91e96465d041bbaaa1)
+        ;
+
+        
+    
+    
+            marker_7ae7cbe478d1ea7bb1f3184f0a906c20.bindTooltip(
+                `<div>
+                     Flight 10: 2014-09-07, Class 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7ae7cbe478d1ea7bb1f3184f0a906c20.setIcon(icon_22d03fcca423e4162a0c4746b1a5b633);
+            
+    
+            var marker_b2602945e74cf448047c612b0ed1e24e = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_14a9c7afc04108faee2274b597356cae = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dc1338c80edc7907e09781a443b934c4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f464fc12cb9bbd5d9ab632ba3ca4f4b4 = $(`<div id="html_f464fc12cb9bbd5d9ab632ba3ca4f4b4" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>False Ocean<br>Payload: 2,216 kg</div>`)[0];
+                popup_dc1338c80edc7907e09781a443b934c4.setContent(html_f464fc12cb9bbd5d9ab632ba3ca4f4b4);
+            
+        
+
+        marker_b2602945e74cf448047c612b0ed1e24e.bindPopup(popup_dc1338c80edc7907e09781a443b934c4)
+        ;
+
+        
+    
+    
+            marker_b2602945e74cf448047c612b0ed1e24e.bindTooltip(
+                `<div>
+                     Flight 11: 2014-09-21, Class 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b2602945e74cf448047c612b0ed1e24e.setIcon(icon_14a9c7afc04108faee2274b597356cae);
+            
+    
+            var marker_d6c8cd31a4376a5d770ad9ce990497de = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_32ede9682a809f8c6c6945af4d28738a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_831a9415b575e924e95ac011b97f4d3d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0f8b86d36723012eb8ef301a72e4fec0 = $(`<div id="html_0f8b86d36723012eb8ef301a72e4fec0" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>False ASDS<br>Payload: 2,395 kg</div>`)[0];
+                popup_831a9415b575e924e95ac011b97f4d3d.setContent(html_0f8b86d36723012eb8ef301a72e4fec0);
+            
+        
+
+        marker_d6c8cd31a4376a5d770ad9ce990497de.bindPopup(popup_831a9415b575e924e95ac011b97f4d3d)
+        ;
+
+        
+    
+    
+            marker_d6c8cd31a4376a5d770ad9ce990497de.bindTooltip(
+                `<div>
+                     Flight 12: 2015-01-10, Class 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d6c8cd31a4376a5d770ad9ce990497de.setIcon(icon_32ede9682a809f8c6c6945af4d28738a);
+            
+    
+            var marker_121855cee0a31745d00dbfab282148bc = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_fef363571004254a6660a24cf1ac992b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e923b788a7df44d6cb985a4bcac56f61 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_da89eff4e99b3d09ab939f686bbd84eb = $(`<div id="html_da89eff4e99b3d09ab939f686bbd84eb" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True Ocean<br>Payload: 570 kg</div>`)[0];
+                popup_e923b788a7df44d6cb985a4bcac56f61.setContent(html_da89eff4e99b3d09ab939f686bbd84eb);
+            
+        
+
+        marker_121855cee0a31745d00dbfab282148bc.bindPopup(popup_e923b788a7df44d6cb985a4bcac56f61)
+        ;
+
+        
+    
+    
+            marker_121855cee0a31745d00dbfab282148bc.bindTooltip(
+                `<div>
+                     Flight 13: 2015-02-11, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_121855cee0a31745d00dbfab282148bc.setIcon(icon_fef363571004254a6660a24cf1ac992b);
+            
+    
+            var marker_e1cab97bebe16c41e570c11b9372783c = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_2f5f0d93b2ffb95f40c38b9836b3a878 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_051269e0d1c4660631a9fc6ea4e7389f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_15ef8888173ae9b56b57729497cb5674 = $(`<div id="html_15ef8888173ae9b56b57729497cb5674" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>False ASDS<br>Payload: 1,898 kg</div>`)[0];
+                popup_051269e0d1c4660631a9fc6ea4e7389f.setContent(html_15ef8888173ae9b56b57729497cb5674);
+            
+        
+
+        marker_e1cab97bebe16c41e570c11b9372783c.bindPopup(popup_051269e0d1c4660631a9fc6ea4e7389f)
+        ;
+
+        
+    
+    
+            marker_e1cab97bebe16c41e570c11b9372783c.bindTooltip(
+                `<div>
+                     Flight 14: 2015-04-14, Class 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e1cab97bebe16c41e570c11b9372783c.setIcon(icon_2f5f0d93b2ffb95f40c38b9836b3a878);
+            
+    
+            var marker_24b66032c94f506211483d6326d48af3 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_7be97f50cd32afa064de23af24154b77 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b08a238f9999cba7091f2f0fc244a17c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_46aba601bcf9b2110ef40fa380195480 = $(`<div id="html_46aba601bcf9b2110ef40fa380195480" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>None None<br>Payload: 4,707 kg</div>`)[0];
+                popup_b08a238f9999cba7091f2f0fc244a17c.setContent(html_46aba601bcf9b2110ef40fa380195480);
+            
+        
+
+        marker_24b66032c94f506211483d6326d48af3.bindPopup(popup_b08a238f9999cba7091f2f0fc244a17c)
+        ;
+
+        
+    
+    
+            marker_24b66032c94f506211483d6326d48af3.bindTooltip(
+                `<div>
+                     Flight 15: 2015-04-27, Class 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_24b66032c94f506211483d6326d48af3.setIcon(icon_7be97f50cd32afa064de23af24154b77);
+            
+    
+            var marker_e812356672bb376da382a5e1763f6d9d = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_9ef469c45dfea384b2f4307127e336b5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f7ec93efc41770cafc94b8ebb8011bb5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_71b308024511d5d17e7d5dd9ca482ee8 = $(`<div id="html_71b308024511d5d17e7d5dd9ca482ee8" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>None ASDS<br>Payload: 2,477 kg</div>`)[0];
+                popup_f7ec93efc41770cafc94b8ebb8011bb5.setContent(html_71b308024511d5d17e7d5dd9ca482ee8);
+            
+        
+
+        marker_e812356672bb376da382a5e1763f6d9d.bindPopup(popup_f7ec93efc41770cafc94b8ebb8011bb5)
+        ;
+
+        
+    
+    
+            marker_e812356672bb376da382a5e1763f6d9d.bindTooltip(
+                `<div>
+                     Flight 16: 2015-06-28, Class 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e812356672bb376da382a5e1763f6d9d.setIcon(icon_9ef469c45dfea384b2f4307127e336b5);
+            
+    
+            var marker_86d437d98196d1da360c072c468f8831 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_5ff1716ab87ac12dd87580d6f860b70c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fd5aab063a11fc84e1802eab1b5b5ee1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cee97e65b2b1c3c9ae474a11d181115c = $(`<div id="html_cee97e65b2b1c3c9ae474a11d181115c" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True RTLS<br>Payload: 2,034 kg</div>`)[0];
+                popup_fd5aab063a11fc84e1802eab1b5b5ee1.setContent(html_cee97e65b2b1c3c9ae474a11d181115c);
+            
+        
+
+        marker_86d437d98196d1da360c072c468f8831.bindPopup(popup_fd5aab063a11fc84e1802eab1b5b5ee1)
+        ;
+
+        
+    
+    
+            marker_86d437d98196d1da360c072c468f8831.bindTooltip(
+                `<div>
+                     Flight 17: 2015-12-22, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_86d437d98196d1da360c072c468f8831.setIcon(icon_5ff1716ab87ac12dd87580d6f860b70c);
+            
+    
+            var marker_92bfc6f98b5f64ce489e93b25b881825 = L.marker(
+                [34.632093, -120.610829],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_d3395561875e35d5a96245839f8ab535 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_804f872015738340102c7e80d878da3d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_784dac270d355498a7d3909050b4d527 = $(`<div id="html_784dac270d355498a7d3909050b4d527" style="width: 100.0%; height: 100.0%;">VAFB SLC 4E<br>False ASDS<br>Payload: 553 kg</div>`)[0];
+                popup_804f872015738340102c7e80d878da3d.setContent(html_784dac270d355498a7d3909050b4d527);
+            
+        
+
+        marker_92bfc6f98b5f64ce489e93b25b881825.bindPopup(popup_804f872015738340102c7e80d878da3d)
+        ;
+
+        
+    
+    
+            marker_92bfc6f98b5f64ce489e93b25b881825.bindTooltip(
+                `<div>
+                     Flight 18: 2016-01-17, Class 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_92bfc6f98b5f64ce489e93b25b881825.setIcon(icon_d3395561875e35d5a96245839f8ab535);
+            
+    
+            var marker_b6c2a18ae78ddb6d87c2cfff94ba86dc = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_c0320ae12ed17c7f7d908fefcbf2ecc0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6578cdec73136c8c706e655e1e300407 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e611a5d95ee3906ceb8085b765c09e51 = $(`<div id="html_e611a5d95ee3906ceb8085b765c09e51" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>False ASDS<br>Payload: 5,271 kg</div>`)[0];
+                popup_6578cdec73136c8c706e655e1e300407.setContent(html_e611a5d95ee3906ceb8085b765c09e51);
+            
+        
+
+        marker_b6c2a18ae78ddb6d87c2cfff94ba86dc.bindPopup(popup_6578cdec73136c8c706e655e1e300407)
+        ;
+
+        
+    
+    
+            marker_b6c2a18ae78ddb6d87c2cfff94ba86dc.bindTooltip(
+                `<div>
+                     Flight 19: 2016-03-04, Class 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b6c2a18ae78ddb6d87c2cfff94ba86dc.setIcon(icon_c0320ae12ed17c7f7d908fefcbf2ecc0);
+            
+    
+            var marker_8e18350cc49e1df95f1b0fddc6d24840 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_8a79fab9feb8621765a9107b2ac847dc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_aab6e68b2fc639be0389f4f38bfe6d79 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c6066efb74f7f7aaeed52f0ab8c9e915 = $(`<div id="html_c6066efb74f7f7aaeed52f0ab8c9e915" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True ASDS<br>Payload: 3,136 kg</div>`)[0];
+                popup_aab6e68b2fc639be0389f4f38bfe6d79.setContent(html_c6066efb74f7f7aaeed52f0ab8c9e915);
+            
+        
+
+        marker_8e18350cc49e1df95f1b0fddc6d24840.bindPopup(popup_aab6e68b2fc639be0389f4f38bfe6d79)
+        ;
+
+        
+    
+    
+            marker_8e18350cc49e1df95f1b0fddc6d24840.bindTooltip(
+                `<div>
+                     Flight 20: 2016-04-08, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8e18350cc49e1df95f1b0fddc6d24840.setIcon(icon_8a79fab9feb8621765a9107b2ac847dc);
+            
+    
+            var marker_d68b1deb86133b6c06202ff09d50982c = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_702c52df2fda945b26cf91c9bb420b5b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a1b734d69a1c4eb2d9dd08fdf525aca0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a380aeed6a1f4495c72e686cf1af0f1c = $(`<div id="html_a380aeed6a1f4495c72e686cf1af0f1c" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True ASDS<br>Payload: 4,696 kg</div>`)[0];
+                popup_a1b734d69a1c4eb2d9dd08fdf525aca0.setContent(html_a380aeed6a1f4495c72e686cf1af0f1c);
+            
+        
+
+        marker_d68b1deb86133b6c06202ff09d50982c.bindPopup(popup_a1b734d69a1c4eb2d9dd08fdf525aca0)
+        ;
+
+        
+    
+    
+            marker_d68b1deb86133b6c06202ff09d50982c.bindTooltip(
+                `<div>
+                     Flight 21: 2016-05-06, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d68b1deb86133b6c06202ff09d50982c.setIcon(icon_702c52df2fda945b26cf91c9bb420b5b);
+            
+    
+            var marker_8a2429fa1f525e0b455ff7c6974ea09e = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_6078a0ad84e61edbb4cba093ab9dca54 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fc15e771758fbbeb4f8cbd968172eb48 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c8bc23ee5b1023840f7e9c65c6925697 = $(`<div id="html_c8bc23ee5b1023840f7e9c65c6925697" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True ASDS<br>Payload: 3,100 kg</div>`)[0];
+                popup_fc15e771758fbbeb4f8cbd968172eb48.setContent(html_c8bc23ee5b1023840f7e9c65c6925697);
+            
+        
+
+        marker_8a2429fa1f525e0b455ff7c6974ea09e.bindPopup(popup_fc15e771758fbbeb4f8cbd968172eb48)
+        ;
+
+        
+    
+    
+            marker_8a2429fa1f525e0b455ff7c6974ea09e.bindTooltip(
+                `<div>
+                     Flight 22: 2016-05-27, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8a2429fa1f525e0b455ff7c6974ea09e.setIcon(icon_6078a0ad84e61edbb4cba093ab9dca54);
+            
+    
+            var marker_5ae319ff76f83bc617adc5e36f01a1fd = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_2209ba3c63352671ac78a4a875b99784 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_733c5862c1458c6913d7a4b666612ec5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4dd257aaf4b82fae3d3b164a8f875e87 = $(`<div id="html_4dd257aaf4b82fae3d3b164a8f875e87" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True RTLS<br>Payload: 2,257 kg</div>`)[0];
+                popup_733c5862c1458c6913d7a4b666612ec5.setContent(html_4dd257aaf4b82fae3d3b164a8f875e87);
+            
+        
+
+        marker_5ae319ff76f83bc617adc5e36f01a1fd.bindPopup(popup_733c5862c1458c6913d7a4b666612ec5)
+        ;
+
+        
+    
+    
+            marker_5ae319ff76f83bc617adc5e36f01a1fd.bindTooltip(
+                `<div>
+                     Flight 23: 2016-07-18, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5ae319ff76f83bc617adc5e36f01a1fd.setIcon(icon_2209ba3c63352671ac78a4a875b99784);
+            
+    
+            var marker_996c66a2fc18e5531fc0129190161fbd = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_093d7a58c66129f42dd38280191867c2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_de0b13c22d10a8c214ab1f1bcae38354 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d6d8663f6b59da4c6214e885009e564d = $(`<div id="html_d6d8663f6b59da4c6214e885009e564d" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True ASDS<br>Payload: 4,600 kg</div>`)[0];
+                popup_de0b13c22d10a8c214ab1f1bcae38354.setContent(html_d6d8663f6b59da4c6214e885009e564d);
+            
+        
+
+        marker_996c66a2fc18e5531fc0129190161fbd.bindPopup(popup_de0b13c22d10a8c214ab1f1bcae38354)
+        ;
+
+        
+    
+    
+            marker_996c66a2fc18e5531fc0129190161fbd.bindTooltip(
+                `<div>
+                     Flight 24: 2016-08-14, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_996c66a2fc18e5531fc0129190161fbd.setIcon(icon_093d7a58c66129f42dd38280191867c2);
+            
+    
+            var marker_90f99a6197f226fe652e5fa0bb48bb2c = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_043a55ece51bfe9de02f7196d0dd59a4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9d97927ab4308cfc06653200ce8a1746 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_31b91704300b94828f47d924912526d3 = $(`<div id="html_31b91704300b94828f47d924912526d3" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>None ASDS<br>Payload: 5,500 kg</div>`)[0];
+                popup_9d97927ab4308cfc06653200ce8a1746.setContent(html_31b91704300b94828f47d924912526d3);
+            
+        
+
+        marker_90f99a6197f226fe652e5fa0bb48bb2c.bindPopup(popup_9d97927ab4308cfc06653200ce8a1746)
+        ;
+
+        
+    
+    
+            marker_90f99a6197f226fe652e5fa0bb48bb2c.bindTooltip(
+                `<div>
+                     Flight 25: 2016-09-01, Class 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_90f99a6197f226fe652e5fa0bb48bb2c.setIcon(icon_043a55ece51bfe9de02f7196d0dd59a4);
+            
+    
+            var marker_f4a8e8abfe608b4b409458b782c65433 = L.marker(
+                [34.632093, -120.610829],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_7d5ec76be78b6a05ff511cc1f1b07f4a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_95520d9e0e44a5dceee91d0dc87e37c7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7e757526d294ef4033b6286778790c24 = $(`<div id="html_7e757526d294ef4033b6286778790c24" style="width: 100.0%; height: 100.0%;">VAFB SLC 4E<br>True ASDS<br>Payload: 9,600 kg</div>`)[0];
+                popup_95520d9e0e44a5dceee91d0dc87e37c7.setContent(html_7e757526d294ef4033b6286778790c24);
+            
+        
+
+        marker_f4a8e8abfe608b4b409458b782c65433.bindPopup(popup_95520d9e0e44a5dceee91d0dc87e37c7)
+        ;
+
+        
+    
+    
+            marker_f4a8e8abfe608b4b409458b782c65433.bindTooltip(
+                `<div>
+                     Flight 26: 2017-01-14, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f4a8e8abfe608b4b409458b782c65433.setIcon(icon_7d5ec76be78b6a05ff511cc1f1b07f4a);
+            
+    
+            var marker_02bf05480441c7058fa8ea480c30e404 = L.marker(
+                [28.6080585, -80.6039558],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_6cc28415e9db5f58daac9506d64676c3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_096af00269c1e8bb4701a96900e1ffa8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b8a6082c2c80053ad8ebf5c4339177d6 = $(`<div id="html_b8a6082c2c80053ad8ebf5c4339177d6" style="width: 100.0%; height: 100.0%;">KSC LC 39A<br>True RTLS<br>Payload: 2,490 kg</div>`)[0];
+                popup_096af00269c1e8bb4701a96900e1ffa8.setContent(html_b8a6082c2c80053ad8ebf5c4339177d6);
+            
+        
+
+        marker_02bf05480441c7058fa8ea480c30e404.bindPopup(popup_096af00269c1e8bb4701a96900e1ffa8)
+        ;
+
+        
+    
+    
+            marker_02bf05480441c7058fa8ea480c30e404.bindTooltip(
+                `<div>
+                     Flight 27: 2017-02-19, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_02bf05480441c7058fa8ea480c30e404.setIcon(icon_6cc28415e9db5f58daac9506d64676c3);
+            
+    
+            var marker_8fe384bc53c5e4617e69e296d128f24f = L.marker(
+                [28.6080585, -80.6039558],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_d6b0c3a2f7c88cf2d15b2712d62174ec = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5dd456cdebc2f9efdc7216b76273cbf1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6477bcff46f1c82c9325b490d019d739 = $(`<div id="html_6477bcff46f1c82c9325b490d019d739" style="width: 100.0%; height: 100.0%;">KSC LC 39A<br>None None<br>Payload: 5,600 kg</div>`)[0];
+                popup_5dd456cdebc2f9efdc7216b76273cbf1.setContent(html_6477bcff46f1c82c9325b490d019d739);
+            
+        
+
+        marker_8fe384bc53c5e4617e69e296d128f24f.bindPopup(popup_5dd456cdebc2f9efdc7216b76273cbf1)
+        ;
+
+        
+    
+    
+            marker_8fe384bc53c5e4617e69e296d128f24f.bindTooltip(
+                `<div>
+                     Flight 28: 2017-03-16, Class 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8fe384bc53c5e4617e69e296d128f24f.setIcon(icon_d6b0c3a2f7c88cf2d15b2712d62174ec);
+            
+    
+            var marker_593c3cb37c912e90d8a47e0bf0ffe194 = L.marker(
+                [28.6080585, -80.6039558],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_a86037cc5a6ede2a03391b5445a8270b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_17c965313c7df552202e0d6381f83af0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_836d7ac72aced92b7a1f79f047d58618 = $(`<div id="html_836d7ac72aced92b7a1f79f047d58618" style="width: 100.0%; height: 100.0%;">KSC LC 39A<br>True ASDS<br>Payload: 5,300 kg</div>`)[0];
+                popup_17c965313c7df552202e0d6381f83af0.setContent(html_836d7ac72aced92b7a1f79f047d58618);
+            
+        
+
+        marker_593c3cb37c912e90d8a47e0bf0ffe194.bindPopup(popup_17c965313c7df552202e0d6381f83af0)
+        ;
+
+        
+    
+    
+            marker_593c3cb37c912e90d8a47e0bf0ffe194.bindTooltip(
+                `<div>
+                     Flight 29: 2017-03-30, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_593c3cb37c912e90d8a47e0bf0ffe194.setIcon(icon_a86037cc5a6ede2a03391b5445a8270b);
+            
+    
+            var marker_848595bca98eb32faf4b04e5c3441ac6 = L.marker(
+                [28.6080585, -80.6039558],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_490fa09d34ec2602634e77dfbb4347c5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8335bf4c34805fc7d9af961fe0cf2dbe = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1c2396d5e4acf82be9cfadbb23997e0d = $(`<div id="html_1c2396d5e4acf82be9cfadbb23997e0d" style="width: 100.0%; height: 100.0%;">KSC LC 39A<br>True RTLS<br>Payload: 6,105 kg</div>`)[0];
+                popup_8335bf4c34805fc7d9af961fe0cf2dbe.setContent(html_1c2396d5e4acf82be9cfadbb23997e0d);
+            
+        
+
+        marker_848595bca98eb32faf4b04e5c3441ac6.bindPopup(popup_8335bf4c34805fc7d9af961fe0cf2dbe)
+        ;
+
+        
+    
+    
+            marker_848595bca98eb32faf4b04e5c3441ac6.bindTooltip(
+                `<div>
+                     Flight 30: 2017-05-01, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_848595bca98eb32faf4b04e5c3441ac6.setIcon(icon_490fa09d34ec2602634e77dfbb4347c5);
+            
+    
+            var marker_d66bab45ef89bedfbe3ad943a2559914 = L.marker(
+                [28.6080585, -80.6039558],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_d0e7cd0320e3756996cc14a343be2f85 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_46774e06b5ebc5ed71912f5e44c77270 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_16a71b9300025a87af02cff2884af1c2 = $(`<div id="html_16a71b9300025a87af02cff2884af1c2" style="width: 100.0%; height: 100.0%;">KSC LC 39A<br>None None<br>Payload: 6,070 kg</div>`)[0];
+                popup_46774e06b5ebc5ed71912f5e44c77270.setContent(html_16a71b9300025a87af02cff2884af1c2);
+            
+        
+
+        marker_d66bab45ef89bedfbe3ad943a2559914.bindPopup(popup_46774e06b5ebc5ed71912f5e44c77270)
+        ;
+
+        
+    
+    
+            marker_d66bab45ef89bedfbe3ad943a2559914.bindTooltip(
+                `<div>
+                     Flight 31: 2017-05-15, Class 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d66bab45ef89bedfbe3ad943a2559914.setIcon(icon_d0e7cd0320e3756996cc14a343be2f85);
+            
+    
+            var marker_3490cd008d9341c0414b6a46d5503075 = L.marker(
+                [28.6080585, -80.6039558],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_bddf421d0d45480ced77d6e3eea228f3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_22d3585d64733f290d67a40bd5cb42c8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_57f180d8383e87fadb8dbbd263ac3f60 = $(`<div id="html_57f180d8383e87fadb8dbbd263ac3f60" style="width: 100.0%; height: 100.0%;">KSC LC 39A<br>True RTLS<br>Payload: 2,708 kg</div>`)[0];
+                popup_22d3585d64733f290d67a40bd5cb42c8.setContent(html_57f180d8383e87fadb8dbbd263ac3f60);
+            
+        
+
+        marker_3490cd008d9341c0414b6a46d5503075.bindPopup(popup_22d3585d64733f290d67a40bd5cb42c8)
+        ;
+
+        
+    
+    
+            marker_3490cd008d9341c0414b6a46d5503075.bindTooltip(
+                `<div>
+                     Flight 32: 2017-06-03, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3490cd008d9341c0414b6a46d5503075.setIcon(icon_bddf421d0d45480ced77d6e3eea228f3);
+            
+    
+            var marker_3ea3e86ab79e68202a317be1d2d719e0 = L.marker(
+                [28.6080585, -80.6039558],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_4ac9beedc8385c84395c975232f1b72f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cc7846bfe10eb04be4fa7d89e03a124b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b6522c22fd4d2209285ea515e1ff1bad = $(`<div id="html_b6522c22fd4d2209285ea515e1ff1bad" style="width: 100.0%; height: 100.0%;">KSC LC 39A<br>True ASDS<br>Payload: 3,669 kg</div>`)[0];
+                popup_cc7846bfe10eb04be4fa7d89e03a124b.setContent(html_b6522c22fd4d2209285ea515e1ff1bad);
+            
+        
+
+        marker_3ea3e86ab79e68202a317be1d2d719e0.bindPopup(popup_cc7846bfe10eb04be4fa7d89e03a124b)
+        ;
+
+        
+    
+    
+            marker_3ea3e86ab79e68202a317be1d2d719e0.bindTooltip(
+                `<div>
+                     Flight 33: 2017-06-23, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3ea3e86ab79e68202a317be1d2d719e0.setIcon(icon_4ac9beedc8385c84395c975232f1b72f);
+            
+    
+            var marker_46af23df105535fc7d66ef946425b3a5 = L.marker(
+                [34.632093, -120.610829],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_3d306bdb3ab2e4ade9b85f8a747514b5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1c7679af8fa5ac81bcf4c2b591d3e9ce = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_793d1e251a606a40f4e8814910e1a6ef = $(`<div id="html_793d1e251a606a40f4e8814910e1a6ef" style="width: 100.0%; height: 100.0%;">VAFB SLC 4E<br>True ASDS<br>Payload: 9,600 kg</div>`)[0];
+                popup_1c7679af8fa5ac81bcf4c2b591d3e9ce.setContent(html_793d1e251a606a40f4e8814910e1a6ef);
+            
+        
+
+        marker_46af23df105535fc7d66ef946425b3a5.bindPopup(popup_1c7679af8fa5ac81bcf4c2b591d3e9ce)
+        ;
+
+        
+    
+    
+            marker_46af23df105535fc7d66ef946425b3a5.bindTooltip(
+                `<div>
+                     Flight 34: 2017-06-25, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_46af23df105535fc7d66ef946425b3a5.setIcon(icon_3d306bdb3ab2e4ade9b85f8a747514b5);
+            
+    
+            var marker_d793d869a998ee5a08bfa85557d2669b = L.marker(
+                [28.6080585, -80.6039558],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_dfe226c2839bffe1dd5007f0d343dee7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_788d326489f7b6f96092d079f8bd8714 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_33bf0287c473aa0c1f9a8f5515fe2a82 = $(`<div id="html_33bf0287c473aa0c1f9a8f5515fe2a82" style="width: 100.0%; height: 100.0%;">KSC LC 39A<br>None None<br>Payload: 6,761 kg</div>`)[0];
+                popup_788d326489f7b6f96092d079f8bd8714.setContent(html_33bf0287c473aa0c1f9a8f5515fe2a82);
+            
+        
+
+        marker_d793d869a998ee5a08bfa85557d2669b.bindPopup(popup_788d326489f7b6f96092d079f8bd8714)
+        ;
+
+        
+    
+    
+            marker_d793d869a998ee5a08bfa85557d2669b.bindTooltip(
+                `<div>
+                     Flight 35: 2017-07-05, Class 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d793d869a998ee5a08bfa85557d2669b.setIcon(icon_dfe226c2839bffe1dd5007f0d343dee7);
+            
+    
+            var marker_63a717ab32bd488fc29d26188e826a10 = L.marker(
+                [28.6080585, -80.6039558],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_692d8b5029ce3ed1e55d5d0eed4caa90 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2b338b95a18f97800d10b6d1c2f7ee70 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6883471d22c92c5d71277190ed04523f = $(`<div id="html_6883471d22c92c5d71277190ed04523f" style="width: 100.0%; height: 100.0%;">KSC LC 39A<br>True RTLS<br>Payload: 2,910 kg</div>`)[0];
+                popup_2b338b95a18f97800d10b6d1c2f7ee70.setContent(html_6883471d22c92c5d71277190ed04523f);
+            
+        
+
+        marker_63a717ab32bd488fc29d26188e826a10.bindPopup(popup_2b338b95a18f97800d10b6d1c2f7ee70)
+        ;
+
+        
+    
+    
+            marker_63a717ab32bd488fc29d26188e826a10.bindTooltip(
+                `<div>
+                     Flight 36: 2017-08-14, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_63a717ab32bd488fc29d26188e826a10.setIcon(icon_692d8b5029ce3ed1e55d5d0eed4caa90);
+            
+    
+            var marker_0bc37c9423b05c23ec5da25be013c485 = L.marker(
+                [34.632093, -120.610829],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_42476430faf66fcf81f8e38bf774e55d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9c6919b936f93486c325a2c06da7ac48 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0e94e82cb00c852ddea137a02434db2d = $(`<div id="html_0e94e82cb00c852ddea137a02434db2d" style="width: 100.0%; height: 100.0%;">VAFB SLC 4E<br>True ASDS<br>Payload: 475 kg</div>`)[0];
+                popup_9c6919b936f93486c325a2c06da7ac48.setContent(html_0e94e82cb00c852ddea137a02434db2d);
+            
+        
+
+        marker_0bc37c9423b05c23ec5da25be013c485.bindPopup(popup_9c6919b936f93486c325a2c06da7ac48)
+        ;
+
+        
+    
+    
+            marker_0bc37c9423b05c23ec5da25be013c485.bindTooltip(
+                `<div>
+                     Flight 37: 2017-08-24, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0bc37c9423b05c23ec5da25be013c485.setIcon(icon_42476430faf66fcf81f8e38bf774e55d);
+            
+    
+            var marker_edc842f688d7d5e2e3e5b10632462fbe = L.marker(
+                [28.6080585, -80.6039558],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_9f9c09d81efb4a3c30444b9833fe3272 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_afe6ec0cd9c723f4d64351ca905c9db6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_523a2171153cbbb4f3468e5ba0323488 = $(`<div id="html_523a2171153cbbb4f3468e5ba0323488" style="width: 100.0%; height: 100.0%;">KSC LC 39A<br>True RTLS<br>Payload: 4,990 kg</div>`)[0];
+                popup_afe6ec0cd9c723f4d64351ca905c9db6.setContent(html_523a2171153cbbb4f3468e5ba0323488);
+            
+        
+
+        marker_edc842f688d7d5e2e3e5b10632462fbe.bindPopup(popup_afe6ec0cd9c723f4d64351ca905c9db6)
+        ;
+
+        
+    
+    
+            marker_edc842f688d7d5e2e3e5b10632462fbe.bindTooltip(
+                `<div>
+                     Flight 38: 2017-09-07, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_edc842f688d7d5e2e3e5b10632462fbe.setIcon(icon_9f9c09d81efb4a3c30444b9833fe3272);
+            
+    
+            var marker_23a04d25c6b82a35743970459db47d17 = L.marker(
+                [34.632093, -120.610829],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_b1e4759bbc056973efcd33fdbf3b9dac = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_38f52d8187b2a3200d22a8feb26b463f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_45f5f70b5375dab17e2d87c1832ab7f6 = $(`<div id="html_45f5f70b5375dab17e2d87c1832ab7f6" style="width: 100.0%; height: 100.0%;">VAFB SLC 4E<br>True ASDS<br>Payload: 9,600 kg</div>`)[0];
+                popup_38f52d8187b2a3200d22a8feb26b463f.setContent(html_45f5f70b5375dab17e2d87c1832ab7f6);
+            
+        
+
+        marker_23a04d25c6b82a35743970459db47d17.bindPopup(popup_38f52d8187b2a3200d22a8feb26b463f)
+        ;
+
+        
+    
+    
+            marker_23a04d25c6b82a35743970459db47d17.bindTooltip(
+                `<div>
+                     Flight 39: 2017-10-09, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_23a04d25c6b82a35743970459db47d17.setIcon(icon_b1e4759bbc056973efcd33fdbf3b9dac);
+            
+    
+            var marker_a0996553bbe7a1ae496923d1187ed36b = L.marker(
+                [28.6080585, -80.6039558],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_466d353f17f5a4985219543cf37889e2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f8a2d866cafff2fb45c68fc3693318f9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4433a5a83f25ff5c380ceef0bb7b4225 = $(`<div id="html_4433a5a83f25ff5c380ceef0bb7b4225" style="width: 100.0%; height: 100.0%;">KSC LC 39A<br>True ASDS<br>Payload: 5,200 kg</div>`)[0];
+                popup_f8a2d866cafff2fb45c68fc3693318f9.setContent(html_4433a5a83f25ff5c380ceef0bb7b4225);
+            
+        
+
+        marker_a0996553bbe7a1ae496923d1187ed36b.bindPopup(popup_f8a2d866cafff2fb45c68fc3693318f9)
+        ;
+
+        
+    
+    
+            marker_a0996553bbe7a1ae496923d1187ed36b.bindTooltip(
+                `<div>
+                     Flight 40: 2017-10-11, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a0996553bbe7a1ae496923d1187ed36b.setIcon(icon_466d353f17f5a4985219543cf37889e2);
+            
+    
+            var marker_d60fbdc7cd75bb47dce7965830d3e066 = L.marker(
+                [28.6080585, -80.6039558],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_e5732b3127813082223f5934df4f5319 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6537309ff8f35b17342cec81cac99d88 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0f56633cd19119fc7e4853cfdc5f8c7f = $(`<div id="html_0f56633cd19119fc7e4853cfdc5f8c7f" style="width: 100.0%; height: 100.0%;">KSC LC 39A<br>True ASDS<br>Payload: 3,700 kg</div>`)[0];
+                popup_6537309ff8f35b17342cec81cac99d88.setContent(html_0f56633cd19119fc7e4853cfdc5f8c7f);
+            
+        
+
+        marker_d60fbdc7cd75bb47dce7965830d3e066.bindPopup(popup_6537309ff8f35b17342cec81cac99d88)
+        ;
+
+        
+    
+    
+            marker_d60fbdc7cd75bb47dce7965830d3e066.bindTooltip(
+                `<div>
+                     Flight 41: 2017-10-30, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d60fbdc7cd75bb47dce7965830d3e066.setIcon(icon_e5732b3127813082223f5934df4f5319);
+            
+    
+            var marker_4d720cf9ccfd68b69ea8fa21c41e12ed = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_8a222c21df28d2b13f4a15ed44a87f23 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b925cdc068ab88bb2515b9015d37c696 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_87d790d7410058412f016fef0f655a88 = $(`<div id="html_87d790d7410058412f016fef0f655a88" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True RTLS<br>Payload: 2,205 kg</div>`)[0];
+                popup_b925cdc068ab88bb2515b9015d37c696.setContent(html_87d790d7410058412f016fef0f655a88);
+            
+        
+
+        marker_4d720cf9ccfd68b69ea8fa21c41e12ed.bindPopup(popup_b925cdc068ab88bb2515b9015d37c696)
+        ;
+
+        
+    
+    
+            marker_4d720cf9ccfd68b69ea8fa21c41e12ed.bindTooltip(
+                `<div>
+                     Flight 42: 2017-12-15, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4d720cf9ccfd68b69ea8fa21c41e12ed.setIcon(icon_8a222c21df28d2b13f4a15ed44a87f23);
+            
+    
+            var marker_7bd6ce89f894d4e90ce7309b6cb13e76 = L.marker(
+                [34.632093, -120.610829],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_03b8b2ecf3472e56fe39963c978cab82 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d762b5709f907dac5ca1c26c8128c4e0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9e5b288b81810289486ed31e1c72837a = $(`<div id="html_9e5b288b81810289486ed31e1c72837a" style="width: 100.0%; height: 100.0%;">VAFB SLC 4E<br>True Ocean<br>Payload: 9,600 kg</div>`)[0];
+                popup_d762b5709f907dac5ca1c26c8128c4e0.setContent(html_9e5b288b81810289486ed31e1c72837a);
+            
+        
+
+        marker_7bd6ce89f894d4e90ce7309b6cb13e76.bindPopup(popup_d762b5709f907dac5ca1c26c8128c4e0)
+        ;
+
+        
+    
+    
+            marker_7bd6ce89f894d4e90ce7309b6cb13e76.bindTooltip(
+                `<div>
+                     Flight 43: 2017-12-23, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7bd6ce89f894d4e90ce7309b6cb13e76.setIcon(icon_03b8b2ecf3472e56fe39963c978cab82);
+            
+    
+            var marker_2d8ebefea9f4b20f63bc912fa7577528 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_8a95b88e4f201b10d1efd2d3686b2ce8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_714df1149957d22b92920f7e22e8ac07 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7043bc7509a5d0c67d6f2bb87c73110c = $(`<div id="html_7043bc7509a5d0c67d6f2bb87c73110c" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True RTLS<br>Payload: 6,105 kg</div>`)[0];
+                popup_714df1149957d22b92920f7e22e8ac07.setContent(html_7043bc7509a5d0c67d6f2bb87c73110c);
+            
+        
+
+        marker_2d8ebefea9f4b20f63bc912fa7577528.bindPopup(popup_714df1149957d22b92920f7e22e8ac07)
+        ;
+
+        
+    
+    
+            marker_2d8ebefea9f4b20f63bc912fa7577528.bindTooltip(
+                `<div>
+                     Flight 44: 2018-01-08, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2d8ebefea9f4b20f63bc912fa7577528.setIcon(icon_8a95b88e4f201b10d1efd2d3686b2ce8);
+            
+    
+            var marker_711bf249037b1b64d6142178dba20818 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_e3d3617e55bbc777f65298c8c520f6c4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_39f3fc647ff461f98757a23072c190b4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8fa1b9d3b92b9fd0851b0ac1a0bfd092 = $(`<div id="html_8fa1b9d3b92b9fd0851b0ac1a0bfd092" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True Ocean<br>Payload: 4,230 kg</div>`)[0];
+                popup_39f3fc647ff461f98757a23072c190b4.setContent(html_8fa1b9d3b92b9fd0851b0ac1a0bfd092);
+            
+        
+
+        marker_711bf249037b1b64d6142178dba20818.bindPopup(popup_39f3fc647ff461f98757a23072c190b4)
+        ;
+
+        
+    
+    
+            marker_711bf249037b1b64d6142178dba20818.bindTooltip(
+                `<div>
+                     Flight 45: 2018-01-31, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_711bf249037b1b64d6142178dba20818.setIcon(icon_e3d3617e55bbc777f65298c8c520f6c4);
+            
+    
+            var marker_409d008b3c54620317488bc5a781c9f1 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_a4ed2a2d2271394ef2a616c15118bf0f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9808d2ee06b2b9a7b70e9e00865aa481 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_afaf4247696c2962528ed25ce1b5a1b1 = $(`<div id="html_afaf4247696c2962528ed25ce1b5a1b1" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>None None<br>Payload: 6,092 kg</div>`)[0];
+                popup_9808d2ee06b2b9a7b70e9e00865aa481.setContent(html_afaf4247696c2962528ed25ce1b5a1b1);
+            
+        
+
+        marker_409d008b3c54620317488bc5a781c9f1.bindPopup(popup_9808d2ee06b2b9a7b70e9e00865aa481)
+        ;
+
+        
+    
+    
+            marker_409d008b3c54620317488bc5a781c9f1.bindTooltip(
+                `<div>
+                     Flight 46: 2018-03-06, Class 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_409d008b3c54620317488bc5a781c9f1.setIcon(icon_a4ed2a2d2271394ef2a616c15118bf0f);
+            
+    
+            var marker_521b005d9d558c0d7b9c1fa682a1d8dc = L.marker(
+                [34.632093, -120.610829],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_44c94bdf06b679256b39233b608a93da = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_16fa4917a9f7edabcd8ed771731b2953 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3566f9802059d6922ad619b6302d1982 = $(`<div id="html_3566f9802059d6922ad619b6302d1982" style="width: 100.0%; height: 100.0%;">VAFB SLC 4E<br>None None<br>Payload: 9,600 kg</div>`)[0];
+                popup_16fa4917a9f7edabcd8ed771731b2953.setContent(html_3566f9802059d6922ad619b6302d1982);
+            
+        
+
+        marker_521b005d9d558c0d7b9c1fa682a1d8dc.bindPopup(popup_16fa4917a9f7edabcd8ed771731b2953)
+        ;
+
+        
+    
+    
+            marker_521b005d9d558c0d7b9c1fa682a1d8dc.bindTooltip(
+                `<div>
+                     Flight 47: 2018-03-30, Class 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_521b005d9d558c0d7b9c1fa682a1d8dc.setIcon(icon_44c94bdf06b679256b39233b608a93da);
+            
+    
+            var marker_834e892c64c5a801d730436538d2190a = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_60f83ea6d5d26b64daeeaedabc28b3c5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0031548fd637ba950d011e9f84876aac = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_96f5e1d35571dffccbdc13c6f33b5bfb = $(`<div id="html_96f5e1d35571dffccbdc13c6f33b5bfb" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>None None<br>Payload: 2,760 kg</div>`)[0];
+                popup_0031548fd637ba950d011e9f84876aac.setContent(html_96f5e1d35571dffccbdc13c6f33b5bfb);
+            
+        
+
+        marker_834e892c64c5a801d730436538d2190a.bindPopup(popup_0031548fd637ba950d011e9f84876aac)
+        ;
+
+        
+    
+    
+            marker_834e892c64c5a801d730436538d2190a.bindTooltip(
+                `<div>
+                     Flight 48: 2018-04-02, Class 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_834e892c64c5a801d730436538d2190a.setIcon(icon_60f83ea6d5d26b64daeeaedabc28b3c5);
+            
+    
+            var marker_d76710bbee42f6bd0bdc132a85f5f44c = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_d84892a31670e15d5503c11e1e0642fa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e12f8a129f0f78bfe16ed6281c9aff3e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6fffbfe552caa430a33e41d0bbb23613 = $(`<div id="html_6fffbfe552caa430a33e41d0bbb23613" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True ASDS<br>Payload: 350 kg</div>`)[0];
+                popup_e12f8a129f0f78bfe16ed6281c9aff3e.setContent(html_6fffbfe552caa430a33e41d0bbb23613);
+            
+        
+
+        marker_d76710bbee42f6bd0bdc132a85f5f44c.bindPopup(popup_e12f8a129f0f78bfe16ed6281c9aff3e)
+        ;
+
+        
+    
+    
+            marker_d76710bbee42f6bd0bdc132a85f5f44c.bindTooltip(
+                `<div>
+                     Flight 49: 2018-04-18, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d76710bbee42f6bd0bdc132a85f5f44c.setIcon(icon_d84892a31670e15d5503c11e1e0642fa);
+            
+    
+            var marker_bc8135e43f1d5bbe30e914f6ccb7869c = L.marker(
+                [28.6080585, -80.6039558],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_6f3f67f0e4159e1a88bf6fc717d80fe1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3e7815156b4861fca548c7c34165233b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ee6fc9e3512d9621e9d6e7456185ccc4 = $(`<div id="html_ee6fc9e3512d9621e9d6e7456185ccc4" style="width: 100.0%; height: 100.0%;">KSC LC 39A<br>True ASDS<br>Payload: 3,750 kg</div>`)[0];
+                popup_3e7815156b4861fca548c7c34165233b.setContent(html_ee6fc9e3512d9621e9d6e7456185ccc4);
+            
+        
+
+        marker_bc8135e43f1d5bbe30e914f6ccb7869c.bindPopup(popup_3e7815156b4861fca548c7c34165233b)
+        ;
+
+        
+    
+    
+            marker_bc8135e43f1d5bbe30e914f6ccb7869c.bindTooltip(
+                `<div>
+                     Flight 50: 2018-05-11, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bc8135e43f1d5bbe30e914f6ccb7869c.setIcon(icon_6f3f67f0e4159e1a88bf6fc717d80fe1);
+            
+    
+            var marker_a2cf34f45e7b6eee2cd608c24c7dbbc4 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_682184f80ca0af6255cba6ba6bb98aac = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2be59cc2b88d4a82591e03dfa562279e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4685517c09bb9ba2314a7b40bc97d7c5 = $(`<div id="html_4685517c09bb9ba2314a7b40bc97d7c5" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>None None<br>Payload: 5,384 kg</div>`)[0];
+                popup_2be59cc2b88d4a82591e03dfa562279e.setContent(html_4685517c09bb9ba2314a7b40bc97d7c5);
+            
+        
+
+        marker_a2cf34f45e7b6eee2cd608c24c7dbbc4.bindPopup(popup_2be59cc2b88d4a82591e03dfa562279e)
+        ;
+
+        
+    
+    
+            marker_a2cf34f45e7b6eee2cd608c24c7dbbc4.bindTooltip(
+                `<div>
+                     Flight 51: 2018-06-04, Class 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a2cf34f45e7b6eee2cd608c24c7dbbc4.setIcon(icon_682184f80ca0af6255cba6ba6bb98aac);
+            
+    
+            var marker_ad9439ebe11fc8cba63c31e2ad2ba259 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_5168fe4e87fb80da8ad2c89ef2963c24 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d09c0cb2c644760e81f252230570ddbd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_90873be62af35fa911c531d3723d7edf = $(`<div id="html_90873be62af35fa911c531d3723d7edf" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>None None<br>Payload: 2,410 kg</div>`)[0];
+                popup_d09c0cb2c644760e81f252230570ddbd.setContent(html_90873be62af35fa911c531d3723d7edf);
+            
+        
+
+        marker_ad9439ebe11fc8cba63c31e2ad2ba259.bindPopup(popup_d09c0cb2c644760e81f252230570ddbd)
+        ;
+
+        
+    
+    
+            marker_ad9439ebe11fc8cba63c31e2ad2ba259.bindTooltip(
+                `<div>
+                     Flight 52: 2018-06-29, Class 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ad9439ebe11fc8cba63c31e2ad2ba259.setIcon(icon_5168fe4e87fb80da8ad2c89ef2963c24);
+            
+    
+            var marker_c73bc1227708922fd6d80fa86fc4dfb7 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_70f913c4426d4316c483cb0ca2d4e7f2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b13eec5242cc223b5ec7a72ebb19648f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_41cc9587b50fbb5ebb866bcbf9c14738 = $(`<div id="html_41cc9587b50fbb5ebb866bcbf9c14738" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True ASDS<br>Payload: 7,076 kg</div>`)[0];
+                popup_b13eec5242cc223b5ec7a72ebb19648f.setContent(html_41cc9587b50fbb5ebb866bcbf9c14738);
+            
+        
+
+        marker_c73bc1227708922fd6d80fa86fc4dfb7.bindPopup(popup_b13eec5242cc223b5ec7a72ebb19648f)
+        ;
+
+        
+    
+    
+            marker_c73bc1227708922fd6d80fa86fc4dfb7.bindTooltip(
+                `<div>
+                     Flight 53: 2018-07-22, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c73bc1227708922fd6d80fa86fc4dfb7.setIcon(icon_70f913c4426d4316c483cb0ca2d4e7f2);
+            
+    
+            var marker_c626f6814a9e0465c8ac29cd77091ce9 = L.marker(
+                [34.632093, -120.610829],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_54242b203675b9b3afd7edf961741fa0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5bb55a2ffb06127c5c6f124051800345 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_40385dd2a2bbbca7fc44bdc8158314dc = $(`<div id="html_40385dd2a2bbbca7fc44bdc8158314dc" style="width: 100.0%; height: 100.0%;">VAFB SLC 4E<br>True ASDS<br>Payload: 9,600 kg</div>`)[0];
+                popup_5bb55a2ffb06127c5c6f124051800345.setContent(html_40385dd2a2bbbca7fc44bdc8158314dc);
+            
+        
+
+        marker_c626f6814a9e0465c8ac29cd77091ce9.bindPopup(popup_5bb55a2ffb06127c5c6f124051800345)
+        ;
+
+        
+    
+    
+            marker_c626f6814a9e0465c8ac29cd77091ce9.bindTooltip(
+                `<div>
+                     Flight 54: 2018-07-25, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c626f6814a9e0465c8ac29cd77091ce9.setIcon(icon_54242b203675b9b3afd7edf961741fa0);
+            
+    
+            var marker_ffc6ac8def5af9be212df893367628e5 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_285a32d2d35429e2c82b005589978465 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ca47a4d7d27d811abcbac979020c7b5c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d57dedc15fe902f8a04883d2ec03a466 = $(`<div id="html_d57dedc15fe902f8a04883d2ec03a466" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True ASDS<br>Payload: 5,800 kg</div>`)[0];
+                popup_ca47a4d7d27d811abcbac979020c7b5c.setContent(html_d57dedc15fe902f8a04883d2ec03a466);
+            
+        
+
+        marker_ffc6ac8def5af9be212df893367628e5.bindPopup(popup_ca47a4d7d27d811abcbac979020c7b5c)
+        ;
+
+        
+    
+    
+            marker_ffc6ac8def5af9be212df893367628e5.bindTooltip(
+                `<div>
+                     Flight 55: 2018-08-07, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ffc6ac8def5af9be212df893367628e5.setIcon(icon_285a32d2d35429e2c82b005589978465);
+            
+    
+            var marker_b6975ce730076fea63f20864e56b5ac0 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_6008a9c777b0dac188d366e3cd98bfd4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0ee86fc4cc07c2811f9f7e1c4bc0c0d4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bc1d852e8af583750e93685e91c16ff9 = $(`<div id="html_bc1d852e8af583750e93685e91c16ff9" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True ASDS<br>Payload: 7,060 kg</div>`)[0];
+                popup_0ee86fc4cc07c2811f9f7e1c4bc0c0d4.setContent(html_bc1d852e8af583750e93685e91c16ff9);
+            
+        
+
+        marker_b6975ce730076fea63f20864e56b5ac0.bindPopup(popup_0ee86fc4cc07c2811f9f7e1c4bc0c0d4)
+        ;
+
+        
+    
+    
+            marker_b6975ce730076fea63f20864e56b5ac0.bindTooltip(
+                `<div>
+                     Flight 56: 2018-09-10, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b6975ce730076fea63f20864e56b5ac0.setIcon(icon_6008a9c777b0dac188d366e3cd98bfd4);
+            
+    
+            var marker_9f1eb2f32b649b0db6cdae57b85e7073 = L.marker(
+                [34.632093, -120.610829],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_ff6c2381f4f58c9a17b305f27e502adc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bb170df8ef49cb6f03e5890f9d451841 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bb343ee9fa94c36dd90545ae854698f2 = $(`<div id="html_bb343ee9fa94c36dd90545ae854698f2" style="width: 100.0%; height: 100.0%;">VAFB SLC 4E<br>True RTLS<br>Payload: 2,800 kg</div>`)[0];
+                popup_bb170df8ef49cb6f03e5890f9d451841.setContent(html_bb343ee9fa94c36dd90545ae854698f2);
+            
+        
+
+        marker_9f1eb2f32b649b0db6cdae57b85e7073.bindPopup(popup_bb170df8ef49cb6f03e5890f9d451841)
+        ;
+
+        
+    
+    
+            marker_9f1eb2f32b649b0db6cdae57b85e7073.bindTooltip(
+                `<div>
+                     Flight 57: 2018-10-08, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9f1eb2f32b649b0db6cdae57b85e7073.setIcon(icon_ff6c2381f4f58c9a17b305f27e502adc);
+            
+    
+            var marker_17713f8c61a5273b050b3a5a938f6276 = L.marker(
+                [28.6080585, -80.6039558],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_683f08818853352c81d1a2568d329c9a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2f0507c45e80ca54fe346ca726b45720 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cee1e3f50e2bb4ffda1e7710315e97f1 = $(`<div id="html_cee1e3f50e2bb4ffda1e7710315e97f1" style="width: 100.0%; height: 100.0%;">KSC LC 39A<br>True ASDS<br>Payload: 3,000 kg</div>`)[0];
+                popup_2f0507c45e80ca54fe346ca726b45720.setContent(html_cee1e3f50e2bb4ffda1e7710315e97f1);
+            
+        
+
+        marker_17713f8c61a5273b050b3a5a938f6276.bindPopup(popup_2f0507c45e80ca54fe346ca726b45720)
+        ;
+
+        
+    
+    
+            marker_17713f8c61a5273b050b3a5a938f6276.bindTooltip(
+                `<div>
+                     Flight 58: 2018-11-15, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_17713f8c61a5273b050b3a5a938f6276.setIcon(icon_683f08818853352c81d1a2568d329c9a);
+            
+    
+            var marker_cab808d0ba459a8a0cd29a9300a3fdb3 = L.marker(
+                [34.632093, -120.610829],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_97358aca1d850929303033cd054e8af5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d90aabb9d39046a4e0869cb21754b5c6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_46d56a89f3e58d74ff6b8b38cfb5cf58 = $(`<div id="html_46d56a89f3e58d74ff6b8b38cfb5cf58" style="width: 100.0%; height: 100.0%;">VAFB SLC 4E<br>True ASDS<br>Payload: 4,000 kg</div>`)[0];
+                popup_d90aabb9d39046a4e0869cb21754b5c6.setContent(html_46d56a89f3e58d74ff6b8b38cfb5cf58);
+            
+        
+
+        marker_cab808d0ba459a8a0cd29a9300a3fdb3.bindPopup(popup_d90aabb9d39046a4e0869cb21754b5c6)
+        ;
+
+        
+    
+    
+            marker_cab808d0ba459a8a0cd29a9300a3fdb3.bindTooltip(
+                `<div>
+                     Flight 59: 2018-12-03, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cab808d0ba459a8a0cd29a9300a3fdb3.setIcon(icon_97358aca1d850929303033cd054e8af5);
+            
+    
+            var marker_6902bc852ce45c0be6f819980cb8364d = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_45cdf0ab7564a3d70acead121ced2009 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_09cad6e6f85f56a400674e583027a7de = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2d9864c7e958ca33247e89d71e81ef44 = $(`<div id="html_2d9864c7e958ca33247e89d71e81ef44" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>False RTLS<br>Payload: 2,573 kg</div>`)[0];
+                popup_09cad6e6f85f56a400674e583027a7de.setContent(html_2d9864c7e958ca33247e89d71e81ef44);
+            
+        
+
+        marker_6902bc852ce45c0be6f819980cb8364d.bindPopup(popup_09cad6e6f85f56a400674e583027a7de)
+        ;
+
+        
+    
+    
+            marker_6902bc852ce45c0be6f819980cb8364d.bindTooltip(
+                `<div>
+                     Flight 60: 2018-12-05, Class 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6902bc852ce45c0be6f819980cb8364d.setIcon(icon_45cdf0ab7564a3d70acead121ced2009);
+            
+    
+            var marker_d0d212949cd4b254cc2b07664fe2b793 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_363912988c7c3f216c3ae1c595d0af08 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_420fd62030b06412c828723496da117f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5e45a99bbf71e43d9d799a6cc34e16d6 = $(`<div id="html_5e45a99bbf71e43d9d799a6cc34e16d6" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>None None<br>Payload: 4,400 kg</div>`)[0];
+                popup_420fd62030b06412c828723496da117f.setContent(html_5e45a99bbf71e43d9d799a6cc34e16d6);
+            
+        
+
+        marker_d0d212949cd4b254cc2b07664fe2b793.bindPopup(popup_420fd62030b06412c828723496da117f)
+        ;
+
+        
+    
+    
+            marker_d0d212949cd4b254cc2b07664fe2b793.bindTooltip(
+                `<div>
+                     Flight 61: 2018-12-23, Class 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d0d212949cd4b254cc2b07664fe2b793.setIcon(icon_363912988c7c3f216c3ae1c595d0af08);
+            
+    
+            var marker_9a79bf923e70f8b119a43367efc12f7e = L.marker(
+                [34.632093, -120.610829],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_d45e1f35cb542c1d8840f6adaa4b505e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_33c507ccba10a8826044b126fb165bf1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c634f5cf0b745aa41900ad4b8d3b827d = $(`<div id="html_c634f5cf0b745aa41900ad4b8d3b827d" style="width: 100.0%; height: 100.0%;">VAFB SLC 4E<br>True ASDS<br>Payload: 9,600 kg</div>`)[0];
+                popup_33c507ccba10a8826044b126fb165bf1.setContent(html_c634f5cf0b745aa41900ad4b8d3b827d);
+            
+        
+
+        marker_9a79bf923e70f8b119a43367efc12f7e.bindPopup(popup_33c507ccba10a8826044b126fb165bf1)
+        ;
+
+        
+    
+    
+            marker_9a79bf923e70f8b119a43367efc12f7e.bindTooltip(
+                `<div>
+                     Flight 62: 2019-01-11, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9a79bf923e70f8b119a43367efc12f7e.setIcon(icon_d45e1f35cb542c1d8840f6adaa4b505e);
+            
+    
+            var marker_59edeffa3400af54afdb67edf5eacfc8 = L.marker(
+                [28.6080585, -80.6039558],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_d580bb69c373553e6a934d69825e2e62 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7cca8c398fea126fd087b68d5cd7cc3b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3b5d3a0086b82aae3157c4c4e801ea51 = $(`<div id="html_3b5d3a0086b82aae3157c4c4e801ea51" style="width: 100.0%; height: 100.0%;">KSC LC 39A<br>True ASDS<br>Payload: 12,259 kg</div>`)[0];
+                popup_7cca8c398fea126fd087b68d5cd7cc3b.setContent(html_3b5d3a0086b82aae3157c4c4e801ea51);
+            
+        
+
+        marker_59edeffa3400af54afdb67edf5eacfc8.bindPopup(popup_7cca8c398fea126fd087b68d5cd7cc3b)
+        ;
+
+        
+    
+    
+            marker_59edeffa3400af54afdb67edf5eacfc8.bindTooltip(
+                `<div>
+                     Flight 63: 2019-03-02, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_59edeffa3400af54afdb67edf5eacfc8.setIcon(icon_d580bb69c373553e6a934d69825e2e62);
+            
+    
+            var marker_a48316ef149f2d46bbc1eb58641148d7 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_8f2b2f8e91b06e81e5629e3b380970ca = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b34260dc4791d5528ef7ee7c0f1772b0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cc386065d3301a076254e67df9c84fc9 = $(`<div id="html_cc386065d3301a076254e67df9c84fc9" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True ASDS<br>Payload: 2,482 kg</div>`)[0];
+                popup_b34260dc4791d5528ef7ee7c0f1772b0.setContent(html_cc386065d3301a076254e67df9c84fc9);
+            
+        
+
+        marker_a48316ef149f2d46bbc1eb58641148d7.bindPopup(popup_b34260dc4791d5528ef7ee7c0f1772b0)
+        ;
+
+        
+    
+    
+            marker_a48316ef149f2d46bbc1eb58641148d7.bindTooltip(
+                `<div>
+                     Flight 64: 2019-05-04, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a48316ef149f2d46bbc1eb58641148d7.setIcon(icon_8f2b2f8e91b06e81e5629e3b380970ca);
+            
+    
+            var marker_9f83183eb270b41bc2cea44785dd0c67 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_9846ec333dbb2e9bcdf33d8e6f3f81a0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ae6d65c630b838b17f9d5de96f00cf10 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ee059bbc4c66a3ef480d85916d82f086 = $(`<div id="html_ee059bbc4c66a3ef480d85916d82f086" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True ASDS<br>Payload: 13,620 kg</div>`)[0];
+                popup_ae6d65c630b838b17f9d5de96f00cf10.setContent(html_ee059bbc4c66a3ef480d85916d82f086);
+            
+        
+
+        marker_9f83183eb270b41bc2cea44785dd0c67.bindPopup(popup_ae6d65c630b838b17f9d5de96f00cf10)
+        ;
+
+        
+    
+    
+            marker_9f83183eb270b41bc2cea44785dd0c67.bindTooltip(
+                `<div>
+                     Flight 65: 2019-05-24, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9f83183eb270b41bc2cea44785dd0c67.setIcon(icon_9846ec333dbb2e9bcdf33d8e6f3f81a0);
+            
+    
+            var marker_6366a8b6c8ffb686443c1f079bf50e39 = L.marker(
+                [34.632093, -120.610829],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_c6e280983b6a2a6df19e199128857846 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_01152377ad1a938a4491631032694683 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b9aa212f43c49bc1db210bb4e47dbe0c = $(`<div id="html_b9aa212f43c49bc1db210bb4e47dbe0c" style="width: 100.0%; height: 100.0%;">VAFB SLC 4E<br>True RTLS<br>Payload: 1,425 kg</div>`)[0];
+                popup_01152377ad1a938a4491631032694683.setContent(html_b9aa212f43c49bc1db210bb4e47dbe0c);
+            
+        
+
+        marker_6366a8b6c8ffb686443c1f079bf50e39.bindPopup(popup_01152377ad1a938a4491631032694683)
+        ;
+
+        
+    
+    
+            marker_6366a8b6c8ffb686443c1f079bf50e39.bindTooltip(
+                `<div>
+                     Flight 66: 2019-06-12, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6366a8b6c8ffb686443c1f079bf50e39.setIcon(icon_c6e280983b6a2a6df19e199128857846);
+            
+    
+            var marker_882dd96f5405bd840e3f9656283a3814 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_2fde4c97a71098619529bf182dbb34be = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_eacd85a8508a3c6c3d36149e64b8ed92 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f2ef239f86ab549f57a3bfff8af97ff9 = $(`<div id="html_f2ef239f86ab549f57a3bfff8af97ff9" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True RTLS<br>Payload: 2,228 kg</div>`)[0];
+                popup_eacd85a8508a3c6c3d36149e64b8ed92.setContent(html_f2ef239f86ab549f57a3bfff8af97ff9);
+            
+        
+
+        marker_882dd96f5405bd840e3f9656283a3814.bindPopup(popup_eacd85a8508a3c6c3d36149e64b8ed92)
+        ;
+
+        
+    
+    
+            marker_882dd96f5405bd840e3f9656283a3814.bindTooltip(
+                `<div>
+                     Flight 67: 2019-07-25, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_882dd96f5405bd840e3f9656283a3814.setIcon(icon_2fde4c97a71098619529bf182dbb34be);
+            
+    
+            var marker_a2d505441047e1484964eaa707a9dea2 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_bd1bee5913f649cd5124bfe5664bffd4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5937ddd6bbf475a70e02fdb6d06bf884 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_613e644a771056d43098284996bb7a9a = $(`<div id="html_613e644a771056d43098284996bb7a9a" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>None None<br>Payload: 6,500 kg</div>`)[0];
+                popup_5937ddd6bbf475a70e02fdb6d06bf884.setContent(html_613e644a771056d43098284996bb7a9a);
+            
+        
+
+        marker_a2d505441047e1484964eaa707a9dea2.bindPopup(popup_5937ddd6bbf475a70e02fdb6d06bf884)
+        ;
+
+        
+    
+    
+            marker_a2d505441047e1484964eaa707a9dea2.bindTooltip(
+                `<div>
+                     Flight 68: 2019-08-06, Class 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a2d505441047e1484964eaa707a9dea2.setIcon(icon_bd1bee5913f649cd5124bfe5664bffd4);
+            
+    
+            var marker_6c18416812e37083c36fd3dcb09b9bb3 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_ce0f428d260c210f8ea401f4eec852c6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7aa51e54f8bc4b7d1c5df19cdc719633 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_85addb23b8076bad028c8ba67b930364 = $(`<div id="html_85addb23b8076bad028c8ba67b930364" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True ASDS<br>Payload: 15,600 kg</div>`)[0];
+                popup_7aa51e54f8bc4b7d1c5df19cdc719633.setContent(html_85addb23b8076bad028c8ba67b930364);
+            
+        
+
+        marker_6c18416812e37083c36fd3dcb09b9bb3.bindPopup(popup_7aa51e54f8bc4b7d1c5df19cdc719633)
+        ;
+
+        
+    
+    
+            marker_6c18416812e37083c36fd3dcb09b9bb3.bindTooltip(
+                `<div>
+                     Flight 69: 2019-11-11, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6c18416812e37083c36fd3dcb09b9bb3.setIcon(icon_ce0f428d260c210f8ea401f4eec852c6);
+            
+    
+            var marker_280e027d624754cd6bd12316ed833373 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_bd06aa360a172db670db81c3b9387e06 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e14a72135118f352805a12d8fd7c9726 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_09466eebbe765cb46206d48e3adfd36b = $(`<div id="html_09466eebbe765cb46206d48e3adfd36b" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True ASDS<br>Payload: 5,000 kg</div>`)[0];
+                popup_e14a72135118f352805a12d8fd7c9726.setContent(html_09466eebbe765cb46206d48e3adfd36b);
+            
+        
+
+        marker_280e027d624754cd6bd12316ed833373.bindPopup(popup_e14a72135118f352805a12d8fd7c9726)
+        ;
+
+        
+    
+    
+            marker_280e027d624754cd6bd12316ed833373.bindTooltip(
+                `<div>
+                     Flight 70: 2019-12-05, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_280e027d624754cd6bd12316ed833373.setIcon(icon_bd06aa360a172db670db81c3b9387e06);
+            
+    
+            var marker_c0e1d1ec4b849f5aedfa714849f8b683 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_38c8f409a508353f8dbfc120ba708ab8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_64a1203d5ff03fcaef16f07709ff7107 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e037f30e7fd004621c4ed2bf1f21f87a = $(`<div id="html_e037f30e7fd004621c4ed2bf1f21f87a" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True ASDS<br>Payload: 6,800 kg</div>`)[0];
+                popup_64a1203d5ff03fcaef16f07709ff7107.setContent(html_e037f30e7fd004621c4ed2bf1f21f87a);
+            
+        
+
+        marker_c0e1d1ec4b849f5aedfa714849f8b683.bindPopup(popup_64a1203d5ff03fcaef16f07709ff7107)
+        ;
+
+        
+    
+    
+            marker_c0e1d1ec4b849f5aedfa714849f8b683.bindTooltip(
+                `<div>
+                     Flight 71: 2019-12-17, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c0e1d1ec4b849f5aedfa714849f8b683.setIcon(icon_38c8f409a508353f8dbfc120ba708ab8);
+            
+    
+            var marker_9dc3427e6cfec28272db1a80fa3577dc = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_4279a70a3b3840dd57824d8187530574 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dfde98741c753220317a7b1a8b146170 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7dfe3bd04bdd53d0b509ee930c111130 = $(`<div id="html_7dfe3bd04bdd53d0b509ee930c111130" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True ASDS<br>Payload: 15,400 kg</div>`)[0];
+                popup_dfde98741c753220317a7b1a8b146170.setContent(html_7dfe3bd04bdd53d0b509ee930c111130);
+            
+        
+
+        marker_9dc3427e6cfec28272db1a80fa3577dc.bindPopup(popup_dfde98741c753220317a7b1a8b146170)
+        ;
+
+        
+    
+    
+            marker_9dc3427e6cfec28272db1a80fa3577dc.bindTooltip(
+                `<div>
+                     Flight 72: 2020-01-07, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9dc3427e6cfec28272db1a80fa3577dc.setIcon(icon_4279a70a3b3840dd57824d8187530574);
+            
+    
+            var marker_fc5e75055d1263a39c69f5e8129a63d7 = L.marker(
+                [28.6080585, -80.6039558],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_2691ad19968cb0d4e5734f1f6fb85cb3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1b246abcf2cfad65dad9c8c564f6cfa8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_84964efaa13c2b6b138edbc2e8772027 = $(`<div id="html_84964efaa13c2b6b138edbc2e8772027" style="width: 100.0%; height: 100.0%;">KSC LC 39A<br>None None<br>Payload: 6,105 kg</div>`)[0];
+                popup_1b246abcf2cfad65dad9c8c564f6cfa8.setContent(html_84964efaa13c2b6b138edbc2e8772027);
+            
+        
+
+        marker_fc5e75055d1263a39c69f5e8129a63d7.bindPopup(popup_1b246abcf2cfad65dad9c8c564f6cfa8)
+        ;
+
+        
+    
+    
+            marker_fc5e75055d1263a39c69f5e8129a63d7.bindTooltip(
+                `<div>
+                     Flight 73: 2020-01-19, Class 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fc5e75055d1263a39c69f5e8129a63d7.setIcon(icon_2691ad19968cb0d4e5734f1f6fb85cb3);
+            
+    
+            var marker_c440bcb032ea238504ae96db7ac49c5d = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_9105adaeff3e1856b87c6314f6c2872f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6beda4618aa7213b0e12b772d9981178 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9d93b78ebaedd3f4a58640a63e31256c = $(`<div id="html_9d93b78ebaedd3f4a58640a63e31256c" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True ASDS<br>Payload: 15,600 kg</div>`)[0];
+                popup_6beda4618aa7213b0e12b772d9981178.setContent(html_9d93b78ebaedd3f4a58640a63e31256c);
+            
+        
+
+        marker_c440bcb032ea238504ae96db7ac49c5d.bindPopup(popup_6beda4618aa7213b0e12b772d9981178)
+        ;
+
+        
+    
+    
+            marker_c440bcb032ea238504ae96db7ac49c5d.bindTooltip(
+                `<div>
+                     Flight 74: 2020-01-29, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c440bcb032ea238504ae96db7ac49c5d.setIcon(icon_9105adaeff3e1856b87c6314f6c2872f);
+            
+    
+            var marker_d6c8c728920fb5a22b11787e8ddd5e57 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_c9eb0eeaebc140eed339beb5843059bf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6fb21ef077aa558c2083193df7347383 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cfbb5a7167b644497ba7d59484c447b7 = $(`<div id="html_cfbb5a7167b644497ba7d59484c447b7" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>False ASDS<br>Payload: 15,400 kg</div>`)[0];
+                popup_6fb21ef077aa558c2083193df7347383.setContent(html_cfbb5a7167b644497ba7d59484c447b7);
+            
+        
+
+        marker_d6c8c728920fb5a22b11787e8ddd5e57.bindPopup(popup_6fb21ef077aa558c2083193df7347383)
+        ;
+
+        
+    
+    
+            marker_d6c8c728920fb5a22b11787e8ddd5e57.bindTooltip(
+                `<div>
+                     Flight 75: 2020-02-17, Class 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d6c8c728920fb5a22b11787e8ddd5e57.setIcon(icon_c9eb0eeaebc140eed339beb5843059bf);
+            
+    
+            var marker_789a598764bbcedd2e73ce3df435631e = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_173cc66e5557d01981e44f6c0da3582d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_515c24e8b0011775f48cd47226d732fb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8f522155366ad923557599b98da2af73 = $(`<div id="html_8f522155366ad923557599b98da2af73" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True RTLS<br>Payload: 1,977 kg</div>`)[0];
+                popup_515c24e8b0011775f48cd47226d732fb.setContent(html_8f522155366ad923557599b98da2af73);
+            
+        
+
+        marker_789a598764bbcedd2e73ce3df435631e.bindPopup(popup_515c24e8b0011775f48cd47226d732fb)
+        ;
+
+        
+    
+    
+            marker_789a598764bbcedd2e73ce3df435631e.bindTooltip(
+                `<div>
+                     Flight 76: 2020-03-07, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_789a598764bbcedd2e73ce3df435631e.setIcon(icon_173cc66e5557d01981e44f6c0da3582d);
+            
+    
+            var marker_e4b99a4a69ab34115b5e5ef7aad2d900 = L.marker(
+                [28.6080585, -80.6039558],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_1b665c7e0aec30681b2d29176f1c4e56 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "remove",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0fc73b9816287d3cac5f7c7403ce8c31 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d5bc02123d58e5fbf7d3afddded3b685 = $(`<div id="html_d5bc02123d58e5fbf7d3afddded3b685" style="width: 100.0%; height: 100.0%;">KSC LC 39A<br>False ASDS<br>Payload: 15,600 kg</div>`)[0];
+                popup_0fc73b9816287d3cac5f7c7403ce8c31.setContent(html_d5bc02123d58e5fbf7d3afddded3b685);
+            
+        
+
+        marker_e4b99a4a69ab34115b5e5ef7aad2d900.bindPopup(popup_0fc73b9816287d3cac5f7c7403ce8c31)
+        ;
+
+        
+    
+    
+            marker_e4b99a4a69ab34115b5e5ef7aad2d900.bindTooltip(
+                `<div>
+                     Flight 77: 2020-03-18, Class 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e4b99a4a69ab34115b5e5ef7aad2d900.setIcon(icon_1b665c7e0aec30681b2d29176f1c4e56);
+            
+    
+            var marker_ae93ec53b40448f4945200d2271969f2 = L.marker(
+                [28.6080585, -80.6039558],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_1780fd00b405dc012d67f9912a1b7531 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c0cfe30374b164daf8e737c2b2dac81c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fd2f31dfbced244b30a6f93bfb4fedb8 = $(`<div id="html_fd2f31dfbced244b30a6f93bfb4fedb8" style="width: 100.0%; height: 100.0%;">KSC LC 39A<br>True ASDS<br>Payload: 15,400 kg</div>`)[0];
+                popup_c0cfe30374b164daf8e737c2b2dac81c.setContent(html_fd2f31dfbced244b30a6f93bfb4fedb8);
+            
+        
+
+        marker_ae93ec53b40448f4945200d2271969f2.bindPopup(popup_c0cfe30374b164daf8e737c2b2dac81c)
+        ;
+
+        
+    
+    
+            marker_ae93ec53b40448f4945200d2271969f2.bindTooltip(
+                `<div>
+                     Flight 78: 2020-04-22, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ae93ec53b40448f4945200d2271969f2.setIcon(icon_1780fd00b405dc012d67f9912a1b7531);
+            
+    
+            var marker_b47f99fd735b9c79f6cd86b2cdf4a6f8 = L.marker(
+                [28.6080585, -80.6039558],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_c58acbde73210bd7ea810eacf892ee24 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ea6262316a8b84e6e4c3d1eb80c18c61 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8f2956b4730cdbbb9571d65f7351b627 = $(`<div id="html_8f2956b4730cdbbb9571d65f7351b627" style="width: 100.0%; height: 100.0%;">KSC LC 39A<br>True ASDS<br>Payload: 9,525 kg</div>`)[0];
+                popup_ea6262316a8b84e6e4c3d1eb80c18c61.setContent(html_8f2956b4730cdbbb9571d65f7351b627);
+            
+        
+
+        marker_b47f99fd735b9c79f6cd86b2cdf4a6f8.bindPopup(popup_ea6262316a8b84e6e4c3d1eb80c18c61)
+        ;
+
+        
+    
+    
+            marker_b47f99fd735b9c79f6cd86b2cdf4a6f8.bindTooltip(
+                `<div>
+                     Flight 79: 2020-05-30, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b47f99fd735b9c79f6cd86b2cdf4a6f8.setIcon(icon_c58acbde73210bd7ea810eacf892ee24);
+            
+    
+            var marker_bad1dea76861d4ae47a4d0249f3ca9b3 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_4caefd44eede7e7c756d6c770eb68921 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_524c89e90bcec18ad632b93c98bc060d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9e155307bbc76014f8ef749787c293a2 = $(`<div id="html_9e155307bbc76014f8ef749787c293a2" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True ASDS<br>Payload: 15,400 kg</div>`)[0];
+                popup_524c89e90bcec18ad632b93c98bc060d.setContent(html_9e155307bbc76014f8ef749787c293a2);
+            
+        
+
+        marker_bad1dea76861d4ae47a4d0249f3ca9b3.bindPopup(popup_524c89e90bcec18ad632b93c98bc060d)
+        ;
+
+        
+    
+    
+            marker_bad1dea76861d4ae47a4d0249f3ca9b3.bindTooltip(
+                `<div>
+                     Flight 80: 2020-06-04, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bad1dea76861d4ae47a4d0249f3ca9b3.setIcon(icon_4caefd44eede7e7c756d6c770eb68921);
+            
+    
+            var marker_ff4480f99e087703fbb0eb738620d988 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_9b1557e9280bde24f579c7e1cd1bc0e9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_66f213a37222c96639f0093a8fb2a296 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d59492532dea795fcd901bcbe7c2634a = $(`<div id="html_d59492532dea795fcd901bcbe7c2634a" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True ASDS<br>Payload: 15,400 kg</div>`)[0];
+                popup_66f213a37222c96639f0093a8fb2a296.setContent(html_d59492532dea795fcd901bcbe7c2634a);
+            
+        
+
+        marker_ff4480f99e087703fbb0eb738620d988.bindPopup(popup_66f213a37222c96639f0093a8fb2a296)
+        ;
+
+        
+    
+    
+            marker_ff4480f99e087703fbb0eb738620d988.bindTooltip(
+                `<div>
+                     Flight 81: 2020-06-13, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ff4480f99e087703fbb0eb738620d988.setIcon(icon_9b1557e9280bde24f579c7e1cd1bc0e9);
+            
+    
+            var marker_c5190f17a8000a9c365c591cd3ff11c9 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_ab5f067526c1000c35052fa0400c336a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2671bf7ff9e1a80c8a4873361690202b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a8338238bafbc97aa23e6c0783d9b8d0 = $(`<div id="html_a8338238bafbc97aa23e6c0783d9b8d0" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True ASDS<br>Payload: 3,880 kg</div>`)[0];
+                popup_2671bf7ff9e1a80c8a4873361690202b.setContent(html_a8338238bafbc97aa23e6c0783d9b8d0);
+            
+        
+
+        marker_c5190f17a8000a9c365c591cd3ff11c9.bindPopup(popup_2671bf7ff9e1a80c8a4873361690202b)
+        ;
+
+        
+    
+    
+            marker_c5190f17a8000a9c365c591cd3ff11c9.bindTooltip(
+                `<div>
+                     Flight 82: 2020-06-30, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c5190f17a8000a9c365c591cd3ff11c9.setIcon(icon_ab5f067526c1000c35052fa0400c336a);
+            
+    
+            var marker_9e18202f33b966f6180cad6b89a555fa = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_da312e2e916ceeab1db4afe2f45776bb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e97b9cce6bc3a1f05209136d552c29c7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cd42c892439fc0263d363de3d2be0f3c = $(`<div id="html_cd42c892439fc0263d363de3d2be0f3c" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True ASDS<br>Payload: 6,105 kg</div>`)[0];
+                popup_e97b9cce6bc3a1f05209136d552c29c7.setContent(html_cd42c892439fc0263d363de3d2be0f3c);
+            
+        
+
+        marker_9e18202f33b966f6180cad6b89a555fa.bindPopup(popup_e97b9cce6bc3a1f05209136d552c29c7)
+        ;
+
+        
+    
+    
+            marker_9e18202f33b966f6180cad6b89a555fa.bindTooltip(
+                `<div>
+                     Flight 83: 2020-07-20, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9e18202f33b966f6180cad6b89a555fa.setIcon(icon_da312e2e916ceeab1db4afe2f45776bb);
+            
+    
+            var marker_05347adbdd22ee4c40df467f699ecf33 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_169f3bf46dbb21f45e51d3884b689911 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e138a80c32c139c5115ef4225d5ebfe9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4de7475a7bba2a39aefe9c0d40e0e48b = $(`<div id="html_4de7475a7bba2a39aefe9c0d40e0e48b" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True ASDS<br>Payload: 15,400 kg</div>`)[0];
+                popup_e138a80c32c139c5115ef4225d5ebfe9.setContent(html_4de7475a7bba2a39aefe9c0d40e0e48b);
+            
+        
+
+        marker_05347adbdd22ee4c40df467f699ecf33.bindPopup(popup_e138a80c32c139c5115ef4225d5ebfe9)
+        ;
+
+        
+    
+    
+            marker_05347adbdd22ee4c40df467f699ecf33.bindTooltip(
+                `<div>
+                     Flight 84: 2020-08-18, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_05347adbdd22ee4c40df467f699ecf33.setIcon(icon_169f3bf46dbb21f45e51d3884b689911);
+            
+    
+            var marker_7dd235a448e9529c23ca4433da3359f8 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_f38292942b2bd6ad7e57980cb9f4742c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3e15c01cfd62d3f4f383cb9717b52dd7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c4eaa010c9ac9623c250265a4b51ef4a = $(`<div id="html_c4eaa010c9ac9623c250265a4b51ef4a" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True RTLS<br>Payload: 1,600 kg</div>`)[0];
+                popup_3e15c01cfd62d3f4f383cb9717b52dd7.setContent(html_c4eaa010c9ac9623c250265a4b51ef4a);
+            
+        
+
+        marker_7dd235a448e9529c23ca4433da3359f8.bindPopup(popup_3e15c01cfd62d3f4f383cb9717b52dd7)
+        ;
+
+        
+    
+    
+            marker_7dd235a448e9529c23ca4433da3359f8.bindTooltip(
+                `<div>
+                     Flight 85: 2020-08-30, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7dd235a448e9529c23ca4433da3359f8.setIcon(icon_f38292942b2bd6ad7e57980cb9f4742c);
+            
+    
+            var marker_633abdc0536584f9328dba852204ba83 = L.marker(
+                [28.6080585, -80.6039558],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_ec6e69c66b3deacc14e6bd092721a48c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_803678301a5a16c4c1d278bd5551daab = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3c9ca92d08328571a40e0b1d6f8582f4 = $(`<div id="html_3c9ca92d08328571a40e0b1d6f8582f4" style="width: 100.0%; height: 100.0%;">KSC LC 39A<br>True ASDS<br>Payload: 15,400 kg</div>`)[0];
+                popup_803678301a5a16c4c1d278bd5551daab.setContent(html_3c9ca92d08328571a40e0b1d6f8582f4);
+            
+        
+
+        marker_633abdc0536584f9328dba852204ba83.bindPopup(popup_803678301a5a16c4c1d278bd5551daab)
+        ;
+
+        
+    
+    
+            marker_633abdc0536584f9328dba852204ba83.bindTooltip(
+                `<div>
+                     Flight 86: 2020-09-03, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_633abdc0536584f9328dba852204ba83.setIcon(icon_ec6e69c66b3deacc14e6bd092721a48c);
+            
+    
+            var marker_56f0e4969fe4f502a78e748675f56c7b = L.marker(
+                [28.6080585, -80.6039558],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_5414cb212fd1713a1209a8ee5a931693 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e44f55a30fd7360b2ed35f8ebf82d711 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dc3272f10277d3d58de82bb82e6ea797 = $(`<div id="html_dc3272f10277d3d58de82bb82e6ea797" style="width: 100.0%; height: 100.0%;">KSC LC 39A<br>True ASDS<br>Payload: 15,400 kg</div>`)[0];
+                popup_e44f55a30fd7360b2ed35f8ebf82d711.setContent(html_dc3272f10277d3d58de82bb82e6ea797);
+            
+        
+
+        marker_56f0e4969fe4f502a78e748675f56c7b.bindPopup(popup_e44f55a30fd7360b2ed35f8ebf82d711)
+        ;
+
+        
+    
+    
+            marker_56f0e4969fe4f502a78e748675f56c7b.bindTooltip(
+                `<div>
+                     Flight 87: 2020-10-06, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_56f0e4969fe4f502a78e748675f56c7b.setIcon(icon_5414cb212fd1713a1209a8ee5a931693);
+            
+    
+            var marker_a9bf6c981d7164bdd3c7bc9dccac538d = L.marker(
+                [28.6080585, -80.6039558],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_3de991bfe0332afd598271677ec09bfa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_74269d8f36c7d4844d7d07c7ce4c2e12 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_417c7afbf64dafd643e26bea78040d88 = $(`<div id="html_417c7afbf64dafd643e26bea78040d88" style="width: 100.0%; height: 100.0%;">KSC LC 39A<br>True ASDS<br>Payload: 15,400 kg</div>`)[0];
+                popup_74269d8f36c7d4844d7d07c7ce4c2e12.setContent(html_417c7afbf64dafd643e26bea78040d88);
+            
+        
+
+        marker_a9bf6c981d7164bdd3c7bc9dccac538d.bindPopup(popup_74269d8f36c7d4844d7d07c7ce4c2e12)
+        ;
+
+        
+    
+    
+            marker_a9bf6c981d7164bdd3c7bc9dccac538d.bindTooltip(
+                `<div>
+                     Flight 88: 2020-10-18, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a9bf6c981d7164bdd3c7bc9dccac538d.setIcon(icon_3de991bfe0332afd598271677ec09bfa);
+            
+    
+            var marker_fbb9142046f9ae401c915248c6d6f7d9 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_499db57190dc13c96b4f607eb4ad16e7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_db358d4f079084ce3bf0101c27221e84 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9ed80a3c5339a4c399f673da1c3acf19 = $(`<div id="html_9ed80a3c5339a4c399f673da1c3acf19" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True ASDS<br>Payload: 15,400 kg</div>`)[0];
+                popup_db358d4f079084ce3bf0101c27221e84.setContent(html_9ed80a3c5339a4c399f673da1c3acf19);
+            
+        
+
+        marker_fbb9142046f9ae401c915248c6d6f7d9.bindPopup(popup_db358d4f079084ce3bf0101c27221e84)
+        ;
+
+        
+    
+    
+            marker_fbb9142046f9ae401c915248c6d6f7d9.bindTooltip(
+                `<div>
+                     Flight 89: 2020-10-24, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fbb9142046f9ae401c915248c6d6f7d9.setIcon(icon_499db57190dc13c96b4f607eb4ad16e7);
+            
+    
+            var marker_347256a90d8d40c621dffa3a9e8c6655 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab);
+        
+    
+            var icon_1dab19f5799646c4f029d9a0df126936 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f047fbdfd4bff67b4451826e75a581fd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8155be9171cd90db673e3f7168373e08 = $(`<div id="html_8155be9171cd90db673e3f7168373e08" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>True ASDS<br>Payload: 3,681 kg</div>`)[0];
+                popup_f047fbdfd4bff67b4451826e75a581fd.setContent(html_8155be9171cd90db673e3f7168373e08);
+            
+        
+
+        marker_347256a90d8d40c621dffa3a9e8c6655.bindPopup(popup_f047fbdfd4bff67b4451826e75a581fd)
+        ;
+
+        
+    
+    
+            marker_347256a90d8d40c621dffa3a9e8c6655.bindTooltip(
+                `<div>
+                     Flight 90: 2020-11-05, Class 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_347256a90d8d40c621dffa3a9e8c6655.setIcon(icon_1dab19f5799646c4f029d9a0df126936);
+            
+    
+            marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab.addTo(map_973f63c593de22311d798d665dbb8418);
+        
+    
+            var layer_control_254d38d66f779272a6845666f4d642dc_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_748e334698570e0d5ac227d1a15816a1,
+                },
+                overlays :  {
+                    "Launch outcomes" : marker_cluster_2af52c1c54dd6504eecbcf9e229de3ab,
+                },
+            };
+            let layer_control_254d38d66f779272a6845666f4d642dc = L.control.layers(
+                layer_control_254d38d66f779272a6845666f4d642dc_layers.base_layers,
+                layer_control_254d38d66f779272a6845666f4d642dc_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_973f63c593de22311d798d665dbb8418);
+
+        
+</script>
+</html>

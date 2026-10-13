@@ -1,0 +1,17 @@
+pandas
+numpy
+requests
+beautifulsoup4
+lxml
+matplotlib
+seaborn
+scikit-learn
+folium
+dash
+plotly
+nbformat
+nbclient
+ipykernel
+ipython-sql
+sqlalchemy
+prettytable

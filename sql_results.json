@@ -1,0 +1,290 @@
+{
+  "1": {
+    "sql": "SELECT DISTINCT Launch_Site\nFROM SPACEXTABLE\nORDER BY Launch_Site;",
+    "columns": [
+      "Launch_Site"
+    ],
+    "rows": [
+      [
+        "CCAFS LC-40"
+      ],
+      [
+        "CCAFS SLC-40"
+      ],
+      [
+        "KSC LC-39A"
+      ],
+      [
+        "VAFB SLC-4E"
+      ]
+    ]
+  },
+  "2": {
+    "sql": "SELECT *\nFROM SPACEXTABLE\nWHERE Launch_Site LIKE 'CCA%'\nORDER BY Date, \"Time (UTC)\"\nLIMIT 5;",
+    "columns": [
+      "Date",
+      "Time (UTC)",
+      "Booster_Version",
+      "Launch_Site",
+      "Payload",
+      "PAYLOAD_MASS__KG_",
+      "Orbit",
+      "Customer",
+      "Mission_Outcome",
+      "Landing_Outcome"
+    ],
+    "rows": [
+      [
+        "2010-06-04",
+        "18:45:00",
+        "F9 v1.0  B0003",
+        "CCAFS LC-40",
+        "Dragon Spacecraft Qualification Unit",
+        0,
+        "LEO",
+        "SpaceX",
+        "Success",
+        "Failure (parachute)"
+      ],
+      [
+        "2010-12-08",
+        "15:43:00",
+        "F9 v1.0  B0004",
+        "CCAFS LC-40",
+        "Dragon demo flight C1, two CubeSats, barrel of Brouere cheese",
+        0,
+        "LEO (ISS)",
+        "NASA (COTS) NRO",
+        "Success",
+        "Failure (parachute)"
+      ],
+      [
+        "2012-05-22",
+        "7:44:00",
+        "F9 v1.0  B0005",
+        "CCAFS LC-40",
+        "Dragon demo flight C2",
+        525,
+        "LEO (ISS)",
+        "NASA (COTS)",
+        "Success",
+        "No attempt"
+      ],
+      [
+        "2012-10-08",
+        "0:35:00",
+        "F9 v1.0  B0006",
+        "CCAFS LC-40",
+        "SpaceX CRS-1",
+        500,
+        "LEO (ISS)",
+        "NASA (CRS)",
+        "Success",
+        "No attempt"
+      ],
+      [
+        "2013-03-01",
+        "15:10:00",
+        "F9 v1.0  B0007",
+        "CCAFS LC-40",
+        "SpaceX CRS-2",
+        677,
+        "LEO (ISS)",
+        "NASA (CRS)",
+        "Success",
+        "No attempt"
+      ]
+    ]
+  },
+  "3": {
+    "sql": "SELECT SUM(PAYLOAD_MASS__KG_) AS Total_Payload_Mass_KG\nFROM SPACEXTABLE\nWHERE Customer = 'NASA (CRS)';",
+    "columns": [
+      "Total_Payload_Mass_KG"
+    ],
+    "rows": [
+      [
+        45596
+      ]
+    ]
+  },
+  "4": {
+    "sql": "-- Match the exact booster-version label specified in the assignment.\nSELECT AVG(PAYLOAD_MASS__KG_) AS Average_Payload_Mass_KG\nFROM SPACEXTABLE\nWHERE Booster_Version = 'F9 v1.1';",
+    "columns": [
+      "Average_Payload_Mass_KG"
+    ],
+    "rows": [
+      [
+        2928.4
+      ]
+    ]
+  },
+  "5": {
+    "sql": "SELECT MIN(Date) AS First_Successful_Ground_Pad_Landing\nFROM SPACEXTABLE\nWHERE TRIM(Landing_Outcome) = 'Success (ground pad)';",
+    "columns": [
+      "First_Successful_Ground_Pad_Landing"
+    ],
+    "rows": [
+      [
+        "2015-12-22"
+      ]
+    ]
+  },
+  "6": {
+    "sql": "SELECT DISTINCT TRIM(Booster_Version) AS Booster_Version\nFROM SPACEXTABLE\nWHERE TRIM(Landing_Outcome) = 'Success (drone ship)'\n  AND PAYLOAD_MASS__KG_ > 4000\n  AND PAYLOAD_MASS__KG_ < 6000\nORDER BY Booster_Version;",
+    "columns": [
+      "Booster_Version"
+    ],
+    "rows": [
+      [
+        "F9 FT  B1021.2"
+      ],
+      [
+        "F9 FT  B1031.2"
+      ],
+      [
+        "F9 FT B1022"
+      ],
+      [
+        "F9 FT B1026"
+      ]
+    ]
+  },
+  "7": {
+    "sql": "-- Count mission outcomes, which are distinct from booster landing outcomes.\n-- Include \"Success (payload status unclear)\" in the success category.\nSELECT CASE\n           WHEN TRIM(Mission_Outcome) LIKE 'Success%' THEN 'Success'\n           WHEN TRIM(Mission_Outcome) LIKE 'Failure%' THEN 'Failure'\n           ELSE 'Other'\n       END AS Mission_Result,\n       COUNT(*) AS Total_Missions\nFROM SPACEXTABLE\nGROUP BY Mission_Result\nORDER BY Total_Missions DESC;",
+    "columns": [
+      "Mission_Result",
+      "Total_Missions"
+    ],
+    "rows": [
+      [
+        "Success",
+        100
+      ],
+      [
+        "Failure",
+        1
+      ]
+    ]
+  },
+  "8": {
+    "sql": "SELECT DISTINCT TRIM(Booster_Version) AS Booster_Version,\n       PAYLOAD_MASS__KG_\nFROM SPACEXTABLE\nWHERE PAYLOAD_MASS__KG_ = (\n    SELECT MAX(PAYLOAD_MASS__KG_)\n    FROM SPACEXTABLE\n)\nORDER BY Booster_Version;",
+    "columns": [
+      "Booster_Version",
+      "PAYLOAD_MASS__KG_"
+    ],
+    "rows": [
+      [
+        "F9 B5 B1048.4",
+        15600
+      ],
+      [
+        "F9 B5 B1048.5",
+        15600
+      ],
+      [
+        "F9 B5 B1049.4",
+        15600
+      ],
+      [
+        "F9 B5 B1049.5",
+        15600
+      ],
+      [
+        "F9 B5 B1049.7",
+        15600
+      ],
+      [
+        "F9 B5 B1051.3",
+        15600
+      ],
+      [
+        "F9 B5 B1051.4",
+        15600
+      ],
+      [
+        "F9 B5 B1051.6",
+        15600
+      ],
+      [
+        "F9 B5 B1056.4",
+        15600
+      ],
+      [
+        "F9 B5 B1058.3",
+        15600
+      ],
+      [
+        "F9 B5 B1060.2",
+        15600
+      ],
+      [
+        "F9 B5 B1060.3",
+        15600
+      ]
+    ]
+  },
+  "9": {
+    "sql": "SELECT CASE SUBSTR(Date, 6, 2)\n           WHEN '01' THEN 'January'\n           WHEN '02' THEN 'February'\n           WHEN '03' THEN 'March'\n           WHEN '04' THEN 'April'\n           WHEN '05' THEN 'May'\n           WHEN '06' THEN 'June'\n           WHEN '07' THEN 'July'\n           WHEN '08' THEN 'August'\n           WHEN '09' THEN 'September'\n           WHEN '10' THEN 'October'\n           WHEN '11' THEN 'November'\n           WHEN '12' THEN 'December'\n       END AS Month,\n       Landing_Outcome,\n       TRIM(Booster_Version) AS Booster_Version,\n       Launch_Site\nFROM SPACEXTABLE\nWHERE SUBSTR(Date, 1, 4) = '2015'\n  AND TRIM(Landing_Outcome) = 'Failure (drone ship)'\nORDER BY Date;",
+    "columns": [
+      "Month",
+      "Landing_Outcome",
+      "Booster_Version",
+      "Launch_Site"
+    ],
+    "rows": [
+      [
+        "January",
+        "Failure (drone ship)",
+        "F9 v1.1 B1012",
+        "CCAFS LC-40"
+      ],
+      [
+        "April",
+        "Failure (drone ship)",
+        "F9 v1.1 B1015",
+        "CCAFS LC-40"
+      ]
+    ]
+  },
+  "10": {
+    "sql": "SELECT TRIM(Landing_Outcome) AS Landing_Outcome,\n       COUNT(*) AS Outcome_Count\nFROM SPACEXTABLE\nWHERE Date BETWEEN '2010-06-04' AND '2017-03-20'\nGROUP BY TRIM(Landing_Outcome)\nORDER BY Outcome_Count DESC, Landing_Outcome;",
+    "columns": [
+      "Landing_Outcome",
+      "Outcome_Count"
+    ],
+    "rows": [
+      [
+        "No attempt",
+        10
+      ],
+      [
+        "Failure (drone ship)",
+        5
+      ],
+      [
+        "Success (drone ship)",
+        5
+      ],
+      [
+        "Controlled (ocean)",
+        3
+      ],
+      [
+        "Success (ground pad)",
+        3
+      ],
+      [
+        "Failure (parachute)",
+        2
+      ],
+      [
+        "Uncontrolled (ocean)",
+        2
+      ],
+      [
+        "Precluded (drone ship)",
+        1
+      ]
+    ]
+  }
+}

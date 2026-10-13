@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a8c62dc74e6a62e4346f218148e05a8a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/ardhi/Leaflet.MousePosition/src/L.Control.MousePosition.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ardhi/Leaflet.MousePosition/src/L.Control.MousePosition.min.css"/>
+</head>
+<body>
+    
+    <div style="position:fixed;top:12px;left:65px;z-index:9999;background:white;padding:14px 20px;font:18px Arial;box-shadow:0 1px 5px #aaa"><b>Falcon 9 launch sites</b><br><span style="font-size:14px">90 launches, 2010â€“2020 | Dataset site names retained</span></div>
+    
+            <div class="folium-map" id="map_a8c62dc74e6a62e4346f218148e05a8a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a8c62dc74e6a62e4346f218148e05a8a = L.map(
+                "map_a8c62dc74e6a62e4346f218148e05a8a",
+                {
+                    center: [33.0, -98.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 4,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_a8c62dc74e6a62e4346f218148e05a8a);
+
+            
+
+        
+    
+            var tile_layer_c9e762bb3b30e42bacc50fb758e57e3b = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_c9e762bb3b30e42bacc50fb758e57e3b.addTo(map_a8c62dc74e6a62e4346f218148e05a8a);
+        
+    
+            var mouse_position_e728eccf6d99e9d8e4ffe685f1e497fc = new L.Control.MousePosition(
+                {
+  "position": "bottomright",
+  "separator": " : ",
+  "emptyString": "Unavailable",
+  "lngFirst": false,
+  "numDigits": 5,
+  "prefix": "",
+}
+            );
+            mouse_position_e728eccf6d99e9d8e4ffe685f1e497fc.options["latFormatter"] =
+                undefined;
+            mouse_position_e728eccf6d99e9d8e4ffe685f1e497fc.options["lngFormatter"] =
+                undefined;
+            map_a8c62dc74e6a62e4346f218148e05a8a.addControl(mouse_position_e728eccf6d99e9d8e4ffe685f1e497fc);
+        
+    
+            var circle_marker_1f3afbc949245896f19552fd5c94d203 = L.circleMarker(
+                [28.5618571, -80.577366],
+                {"bubblingMouseEvents": true, "color": "#0B49CB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0B49CB", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_a8c62dc74e6a62e4346f218148e05a8a);
+        
+    
+            circle_marker_1f3afbc949245896f19552fd5c94d203.bindTooltip(
+                `<div>
+                     CCAFS SLC 40
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_467dc8f2f39f77e8065414d1d6681628 = L.marker(
+                [28.5618571, -80.577366],
+                {
+}
+            ).addTo(map_a8c62dc74e6a62e4346f218148e05a8a);
+        
+    
+            var div_icon_62af737f18d717b083c04bbe1e0ac5a9 = L.divIcon({
+  "html": "\u003cdiv style=\"font:bold 14px Arial;background:white;width:150px;padding:4px\"\u003eCCAFS SLC 40\u003c/div\u003e",
+  "iconAnchor": [-10, -5],
+  "className": "empty",
+});
+        
+    
+                marker_467dc8f2f39f77e8065414d1d6681628.setIcon(div_icon_62af737f18d717b083c04bbe1e0ac5a9);
+            
+    
+            var circle_marker_f52eb690a701dcf1666cc96ebfe15165 = L.circleMarker(
+                [28.6080585, -80.6039558],
+                {"bubblingMouseEvents": true, "color": "#0B49CB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0B49CB", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_a8c62dc74e6a62e4346f218148e05a8a);
+        
+    
+            circle_marker_f52eb690a701dcf1666cc96ebfe15165.bindTooltip(
+                `<div>
+                     KSC LC 39A
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d4225a022f8b8c15ab8b0ca4f19022da = L.marker(
+                [28.6080585, -80.6039558],
+                {
+}
+            ).addTo(map_a8c62dc74e6a62e4346f218148e05a8a);
+        
+    
+            var div_icon_6e7fd0973598ecb75e416b800fb5aa39 = L.divIcon({
+  "html": "\u003cdiv style=\"font:bold 14px Arial;background:white;width:150px;padding:4px\"\u003eKSC LC 39A\u003c/div\u003e",
+  "iconAnchor": [-10, 25],
+  "className": "empty",
+});
+        
+    
+                marker_d4225a022f8b8c15ab8b0ca4f19022da.setIcon(div_icon_6e7fd0973598ecb75e416b800fb5aa39);
+            
+    
+            var circle_marker_7f9817e58611ac1ceaa31deed8be5c13 = L.circleMarker(
+                [34.632093, -120.610829],
+                {"bubblingMouseEvents": true, "color": "#0B49CB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0B49CB", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_a8c62dc74e6a62e4346f218148e05a8a);
+        
+    
+            circle_marker_7f9817e58611ac1ceaa31deed8be5c13.bindTooltip(
+                `<div>
+                     VAFB SLC 4E
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4f2f81ab43d5dc47242414ecfb42ffd6 = L.marker(
+                [34.632093, -120.610829],
+                {
+}
+            ).addTo(map_a8c62dc74e6a62e4346f218148e05a8a);
+        
+    
+            var div_icon_40ee001dac9cd60aab107a34c262fd98 = L.divIcon({
+  "html": "\u003cdiv style=\"font:bold 14px Arial;background:white;width:150px;padding:4px\"\u003eVAFB SLC 4E\u003c/div\u003e",
+  "iconAnchor": [-10, -5],
+  "className": "empty",
+});
+        
+    
+                marker_4f2f81ab43d5dc47242414ecfb42ffd6.setIcon(div_icon_40ee001dac9cd60aab107a34c262fd98);
+            
+</script>
+</html>
